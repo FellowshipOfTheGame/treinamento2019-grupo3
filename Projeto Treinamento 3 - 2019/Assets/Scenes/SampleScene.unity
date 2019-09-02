@@ -281,45 +281,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701661045}
-  - component: {fileID: 701661044}
+  - component: {fileID: 701661046}
   m_Layer: 0
-  m_Name: Defender Manager
+  m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &701661044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701661043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d07fc98ae3a34e488dc4e817b2f0670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridRelativeX:
-  - 0
-  - 6
-  - 12
-  gridRelativeY:
-  - 15
-  - 9
-  - 3
-  - -3
-  - -9
-  - -15
-  cursor: {fileID: 1618010185}
-  upKey: 273
-  downKey: 274
-  leftKey: 276
-  rightKey: 275
-  action1Key: 32
-  enemyShipPrefab: {fileID: 2927363967339240811, guid: fb09db631389d6644a72343c016c4385,
-    type: 3}
 --- !u!4 &701661045
 Transform:
   m_ObjectHideFlags: 0
@@ -328,12 +297,42 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701661043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &701661046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701661043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5edea5d6cc809448dc32de79918287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenSizePercentX: 0.2
+  screenSizePercentY: 1
+  screenOffsetPercentX: 0.9
+  screenOffsetPercentY: 0.5
+  numberOfGridRows: 5
+  numberOfGridColumns: 3
+  gridRowsPositions: []
+  gridColumnsPositions: []
+  cursor: {fileID: 1618010185}
+  cursorX: 0
+  cursorY: 0
+  cursorSpeed: 10
+  upKey: 119
+  downKey: 115
+  leftKey: 97
+  rightKey: 100
+  action1Key: 102
+  mainCamera: {fileID: 519420031}
 --- !u!1 &809245989
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +357,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809245989}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -437,7 +436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618010185}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 809245990}
