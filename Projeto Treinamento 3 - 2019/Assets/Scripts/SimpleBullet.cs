@@ -29,6 +29,15 @@ public class SimpleBullet : MonoBehaviour{
     void DeactivateGameObject() {
         gameObject.SetActive(false);
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        
+        if(collision.tag == "Enemy") {
+
+            gameObject.SetActive(false);
+            //make damage to enemy
+        }
+
+    }
 
 }

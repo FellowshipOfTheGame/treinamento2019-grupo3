@@ -184,3 +184,4 @@ MonoBehaviour:
     type: 3}
   bullet_spawn: {fileID: 1049441260875110781}
   simple_bullet_timer: 1
+  player_controller: Test

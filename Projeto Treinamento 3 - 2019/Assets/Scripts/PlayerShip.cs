@@ -18,6 +18,11 @@ public class PlayerShip : MonoBehaviour{
     private float attack_timer;
     private bool can_attack_simple;
 
+    //the player controller(Needs a controller selection manager later):
+    //Test -> for testing, with keyboard
+    //J1, J2, J3, J4 -> xbox controllers
+    public string player_controller;
+
     // Start is called before the first frame update
     void Start(){
 
@@ -37,7 +42,7 @@ public class PlayerShip : MonoBehaviour{
 
 
         //Basic Input(need to change to xbox controllers later)
-        Vector3 direction = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0f);
+        Vector3 direction = new Vector3(Input.GetAxisRaw(player_controller + "Horizontal"), Input.GetAxisRaw(player_controller + "Vertical"), 0f);
 
         //Define the speed of the movement
         if(direction.x == 0f && direction.y != 0f) {
@@ -67,10 +72,9 @@ public class PlayerShip : MonoBehaviour{
         if(attack_timer > simple_bullet_timer) {
             can_attack_simple = true;
         }
-
-        //Basic Input(need to change to xbox controllers later)
-        if (Input.GetKey(KeyCode.Space)) {
-            //if the space button was pressed
+        
+        if (Input.GetButton(player_controller + "B")) {
+            //if B button was pressed(also space key for testing)
             if (can_attack_simple) {
                 can_attack_simple = false;
                 attack_timer = 0f;
