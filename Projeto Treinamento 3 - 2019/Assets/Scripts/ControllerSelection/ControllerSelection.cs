@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControllerSelection : MonoBehaviour{
 
-    private List<int> assigned_controllers = new List<int>(); 
+    private List<int> assignedControllers = new List<int>(); 
 
     // Start is called before the first frame update
     void Start(){
@@ -16,7 +16,7 @@ public class ControllerSelection : MonoBehaviour{
 
         for (int i = 1; i <= 4; i++) {
 
-            if (assigned_controllers.Contains(i))
+            if (assignedControllers.Contains(i))
                 continue;
 
             if (Input.GetButton("J" + i + "A")) {
@@ -30,7 +30,7 @@ public class ControllerSelection : MonoBehaviour{
     //needs to add a UI later
     void AddPlayerController(int controller) {
 
-        assigned_controllers.Add(controller);
+        assignedControllers.Add(controller);
 
         //............
 

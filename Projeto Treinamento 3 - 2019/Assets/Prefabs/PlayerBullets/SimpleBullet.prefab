@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  deactivate_timer: 5
+  deactivateTimer: 5
 --- !u!50 &-3443526420146102315
 Rigidbody2D:
   serializedVersion: 4

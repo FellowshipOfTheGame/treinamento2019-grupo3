@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3913618516091448616}
   - component: {fileID: 1347284674544632559}
   - component: {fileID: 5075438263164152747}
+  - component: {fileID: 300120200413150922}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -172,16 +173,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a6cc86fa721724e9d9bf51ff6e34f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vertical_speed: 30
-  horizontal_front_speed: 15
-  horizontal_back_speed: 5
-  diagonal_speed: 20
-  min_y: -18
-  max_y: 18
-  min_x: -34
-  max_x: 15
-  simple_bullet: {fileID: 5587719970040693649, guid: ecfe48a335ea76946a29ac1e0d0d2467,
+  verticalSpeed: 60
+  horizontalFrontSpeed: 20
+  horizontalBackSpeed: 10
+  diagonalSpeed: 30
+  minY: -18.5
+  maxY: 18.5
+  minX: -34.5
+  maxX: 8.5
+  simpleBullet: {fileID: 5587719970040693649, guid: ecfe48a335ea76946a29ac1e0d0d2467,
     type: 3}
-  bullet_spawn: {fileID: 1049441260875110781}
-  simple_bullet_timer: 1
-  player_controller: Test
+  bulletSpawn: {fileID: 1049441260875110781}
+  simpleBulletTimer: 1
+  playerController: Test
+--- !u!114 &300120200413150922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606092818743285363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb5cc81a6c355434d894ffa12afaed59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
