@@ -2,39 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleBullet : MonoBehaviour{
+public class ConeBullet : MonoBehaviour{
 
     public float speed;
     public float deactivateTimer;
+    public Vector3 direction;
+    public float angle;
 
     // Start is called before the first frame update
-    void Start(){
+    void Start() {
         //prepare the object to be deactivated
-        Invoke("DeactivateGameObject", deactivateTimer);
+        Destroy(gameObject, deactivateTimer);
+        Rotate();
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update() {
         Move();
     }
 
+    void Rotate() {
+        transform.Rotate(new Vector3(0f, 0f, angle));
+    }
 
     void Move() {
 
         //Just go to the right direction in the screen
-        transform.Translate(Vector3.right * Time.deltaTime * speed);
+        transform.Translate(direction * Time.deltaTime * speed);
 
-    }
-
-    void DeactivateGameObject() {
-        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         
         if(collision.tag == "Enemy") {
 
-            gameObject.SetActive(false);
+            Destroy(gameObject);
             //make damage to enemy
         }
 
