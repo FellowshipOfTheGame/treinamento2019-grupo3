@@ -13,6 +13,7 @@ public class PSShoot : MonoBehaviour {
     private ConeShot coneShot;
 
     private float attackTimer;
+
     public float simpleShotTimer;
     public float coneShotTimer;
     public float beamTimer;
@@ -36,6 +37,7 @@ public class PSShoot : MonoBehaviour {
 
     // Update is called once per frame
     void Update(){
+
         attackTimer += Time.deltaTime;
         if(shotType == ShotType.SIMPLE) {
             if (attackTimer > simpleShotTimer) {
@@ -61,7 +63,7 @@ public class PSShoot : MonoBehaviour {
                 simpleShot.Shoot();
                 canShoot[(int)ShotType.SIMPLE] = false;
             }
-           else if (shotType == ShotType.CONE) {
+            else if (shotType == ShotType.CONE) {
                 coneShot.Shoot();
                 canShoot[(int)ShotType.CONE] = false;
             }

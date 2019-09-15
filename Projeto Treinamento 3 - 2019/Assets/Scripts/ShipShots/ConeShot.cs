@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConeShot : MonoBehaviour{
 
     [SerializeField] private GameObject coneBullet;
-    private GameObject instance;
+    private GameObject bulletInstance;
     public Vector3 direction;
     private GameObject bulletSpawn;
     private float openingAngle;
@@ -15,20 +15,15 @@ public class ConeShot : MonoBehaviour{
         bulletSpawn = transform.GetChild(0).gameObject;
     }
 
-    // Update is called once per frame
-    void Update(){
-        
-    }
-
     public void Shoot() {
 
         openingAngle = 60;
 
-        //Instantiate the cone bullet object
+        //Instantiate 5 cone bullet objects
         for (int i=0; i<5; i++) {
-            instance = Instantiate(coneBullet, bulletSpawn.transform.position, Quaternion.identity);
-            instance.GetComponent<ConeBullet>().direction = direction;
-            instance.GetComponent<ConeBullet>().angle = openingAngle;
+            bulletInstance = Instantiate(coneBullet, bulletSpawn.transform.position, Quaternion.identity);
+            bulletInstance.GetComponent<ConeBullet>().direction = direction;
+            bulletInstance.GetComponent<ConeBullet>().angle = openingAngle;
             openingAngle -= 30f;
         }
     }

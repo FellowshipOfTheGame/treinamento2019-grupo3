@@ -8,16 +8,6 @@ public class PSMove : MonoBehaviour{
     private float speed;
     public float minY, maxY, minX, maxX;
 
-    // Start is called before the first frame update
-    void Start(){
-        
-    }
-
-    // Update is called once per frame
-    void Update(){
-        
-    }
-
     public void Move(Vector3 direction) {
         //Define the speed of the movement
         if (direction.x == 0f && direction.y != 0f) {

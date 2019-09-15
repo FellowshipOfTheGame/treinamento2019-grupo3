@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour{
 
+    //list of connected joysticks
     private List<int> connectedControllers = new List<int>();
+    
     private bool[] shipChoosed = new bool[3];
     private bool constructorChoosed;
+
     private string[] shipController = new string[3];
     private string constructorController;
 
     // Start is called before the first frame update
     void Start(){
-
-        for(int i=0; i<3; i++)
+        
+        //initialization of variables
+        for (int i=0; i<3; i++)
             shipChoosed[i] = false;
         constructorChoosed = false;
 
@@ -26,20 +30,22 @@ public class InputManager : MonoBehaviour{
 
         for (int i = 1; i <= 4; i++) {
 
-            if(connectedControllers.Contains(i))
-                continue;
+            if (connectedControllers.Contains(i)){
 
+                if (Input.GetButton("J" + i + "Start")
+                    && (shipChoosed[0] || shipChoosed[1] || shipChoosed[2])
+                    && constructorChoosed){
+                    //start the game
+                    //Instantiate the players passing the joysticks designed for each one of them to their respective PlayerInput scripts
+                    //and oassing the position to the spawn script...
+                }
+
+                continue;
+            }
+            
             if(Input.GetButton("J" + i + "A")) {
                 AddPlayerController(i);
                 break;
-            }
-
-            if(Input.GetButton("J" + i + "Start")
-               && (shipChoosed[0] || shipChoosed[1] || shipChoosed[2]) 
-               && constructorChoosed) {
-                //start the game
-                //Instantiate the players passing the joysticks designed for each one of them to their respective PlayerInput scripts
-                //and oassing the position to the spawn script...
             }
 
         }
@@ -56,6 +62,7 @@ public class InputManager : MonoBehaviour{
     }
 
 }
+
 
 
 // For detecting connected/disconnected joysticks:

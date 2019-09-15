@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleBullet : MonoBehaviour{
+public class BeamBullet : MonoBehaviour{
 
-    public float speed;
     public float deactivateTimer;
     public Vector3 direction;
 
@@ -12,18 +11,6 @@ public class SimpleBullet : MonoBehaviour{
     void Start(){
         //prepare the object to be deactivated
         Destroy(gameObject, deactivateTimer);
-    }
-
-    // Update is called once per frame
-    void Update(){
-        Move();
-    }
-
-
-    void Move() {
-
-        //Just go to the right direction in the screen
-        transform.Translate(direction * Time.deltaTime * speed);
 
     }
 

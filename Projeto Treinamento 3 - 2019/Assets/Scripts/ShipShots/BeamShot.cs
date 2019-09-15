@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleShot : MonoBehaviour{
+public class BeamShot : MonoBehaviour{
 
-    [SerializeField] private GameObject simpleBullet;
+    [SerializeField] private GameObject beamBullet;
     private GameObject instance;
     public Vector3 direction;
     private GameObject bulletSpawn;
@@ -17,9 +17,9 @@ public class SimpleShot : MonoBehaviour{
 
     public void Shoot() {
         //Instantiate the simple bullet object
-        instance = Instantiate(simpleBullet, bulletSpawn.transform.position, Quaternion.identity);
+        instance = Instantiate(beamBullet, bulletSpawn.transform.position, Quaternion.identity);
         //set the direction of the bullet
-        instance.GetComponent<SimpleBullet>().direction = direction;
+        instance.GetComponent<BeamBullet>().direction = direction;
     }
 
 }

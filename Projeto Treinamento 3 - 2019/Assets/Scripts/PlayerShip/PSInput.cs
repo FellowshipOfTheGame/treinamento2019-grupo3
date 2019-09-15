@@ -30,7 +30,7 @@ public class PSInput : MonoBehaviour{
         inputDirection = new Vector3(Input.GetAxisRaw(playerController + "Horizontal"),
                                      Input.GetAxisRaw(playerController + "Vertical"),
                                      0f);
-        movePlayerShip.Move(inputDirection);
+        if(inputDirection.x != 0 || inputDirection.y != 0) movePlayerShip.Move(inputDirection);
     }
 
     void ShootInput() {
