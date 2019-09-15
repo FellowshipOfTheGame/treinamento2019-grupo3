@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1289480622476775847}
   - component: {fileID: 6840237504825690819}
-  - component: {fileID: 2932018700782184911}
+  - component: {fileID: 215753816570018514}
+  - component: {fileID: 4107134094844421132}
   - component: {fileID: -3443526420146102315}
   - component: {fileID: -4330531423110628477}
   m_Layer: 0
-  m_Name: SimpleBullet
+  m_Name: 'ConeBullet '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b45be786713e1e54e9abcb1af77007d5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9607843, g: 0.78431374, b: 0.07058824, a: 0.94509804}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2932018700782184911
+--- !u!114 &215753816570018514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,11 +92,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 5587719970040693649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cc45e7bf18544468e8ddde23c1a319, type: 3}
+  m_Script: {fileID: 11500000, guid: f3662120cfc9fd844ad190d0dc7a1128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  deactivateTimer: 5
+  speed: 40
+  deactivateTimer: 2
+  direction: {x: 0, y: 0, z: 0}
+  angle: 0
+--- !u!114 &4107134094844421132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5587719970040693649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ff95cb23fdcb24fb33f545639b43b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &-3443526420146102315
 Rigidbody2D:
   serializedVersion: 4
