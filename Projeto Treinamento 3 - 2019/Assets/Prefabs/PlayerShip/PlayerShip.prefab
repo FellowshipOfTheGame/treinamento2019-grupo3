@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7539801983827690652}
   - component: {fileID: 5762281528880369929}
   - component: {fileID: 1989635623532439558}
-  - component: {fileID: 6813976092250532197}
+  - component: {fileID: 8655363347450929895}
   - component: {fileID: 8639802150640633662}
   - component: {fileID: 2187382332882188918}
   m_Layer: 8
@@ -211,7 +211,7 @@ MonoBehaviour:
   maxY: 18.5
   minX: -34.5
   maxX: 5
---- !u!114 &6813976092250532197
+--- !u!114 &8655363347450929895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,13 +220,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8606092818743285363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc3ce32dc0d410e49a3e4a177291c778, type: 3}
+  m_Script: {fileID: 11500000, guid: a7888bd62bb40fa47bb3f0b7fbe7f396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  simpleShotTimer: 0.5
-  coneShotTimer: 0.5
-  beamTimer: 0
-  missileTimer: 0
 --- !u!114 &8639802150640633662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +238,7 @@ MonoBehaviour:
   simpleBullet: {fileID: 5587719970040693649, guid: ecfe48a335ea76946a29ac1e0d0d2467,
     type: 3}
   direction: {x: 0, y: 0, z: 0}
+  shotTimer: 0.5
 --- !u!114 &2187382332882188918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,3 +254,4 @@ MonoBehaviour:
   coneBullet: {fileID: 5587719970040693649, guid: b7606c9f5650274479541dbb509c8587,
     type: 3}
   direction: {x: 0, y: 0, z: 0}
+  shotTimer: 0.5

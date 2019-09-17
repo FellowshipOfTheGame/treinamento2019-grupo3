@@ -8,6 +8,7 @@ public class BeamShot : MonoBehaviour{
     private GameObject instance;
     public Vector3 direction;
     private GameObject bulletSpawn;
+    
 
     // Start is called before the first frame update
     void Start(){

@@ -6,7 +6,7 @@ public class PSInput : MonoBehaviour{
 
     private Vector3 inputDirection;
     private PSMove movePlayerShip;
-    private PSShoot shootPlayerShip;
+    private PSWeapons shootPlayerShip;
 
     //the player controller(Needs a controller selection manager later):
     //Test -> for testing, with keyboard
@@ -16,7 +16,7 @@ public class PSInput : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         movePlayerShip = GetComponent<PSMove>();
-        shootPlayerShip = GetComponent<PSShoot>();
+        shootPlayerShip = GetComponent<PSWeapons>();
     }
 
     // Update is called once per frame
