@@ -9,6 +9,7 @@ public class PSMove : MonoBehaviour{
     public float minY, maxY, minX, maxX;
 
     public void Move(Vector3 direction) {
+
         //Define the speed of the movement
         if (direction.x == 0f && direction.y != 0f) {
             speed = verticalSpeed;
@@ -28,5 +29,5 @@ public class PSMove : MonoBehaviour{
         aux_position.y = Mathf.Clamp(aux_position.y, minY, maxY);
         transform.position = aux_position;
     }
-
+    
 }

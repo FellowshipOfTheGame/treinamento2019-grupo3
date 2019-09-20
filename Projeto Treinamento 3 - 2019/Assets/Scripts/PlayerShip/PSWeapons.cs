@@ -11,7 +11,7 @@ public class PSWeapons : MonoBehaviour {
     private SimpleShot simpleShot;
     private ConeShot coneShot;
     private BeamShot beamShot;
-  
+    
     // Start is called before the first frame update
     void Start(){
 
@@ -23,15 +23,7 @@ public class PSWeapons : MonoBehaviour {
 
         beamShot = GetComponent<BeamShot>();
         beamShot.direction = Vector3.right;
-
-        //only for testing:
-        if (Input.GetButtonDown(gameObject.GetComponent<PSInput>().playerController + "A"))
-            ChangeShotToCone();
-        if (Input.GetButtonDown(gameObject.GetComponent<PSInput>().playerController + "X"))
-            ChangeShotToBeam();
-        if (Input.GetButtonDown(gameObject.GetComponent<PSInput>().playerController + "Y"))
-            ChangeShotToMissile();
-
+        
     }
     
     public void Shoot() {
@@ -70,6 +62,10 @@ public class PSWeapons : MonoBehaviour {
     //method to change the type of the shot to missile
     public void ChangeShotToMissile(){
         currentShot = ShotType.MISSILE;
+    }
+
+    public bool isBeam(){
+        return (currentShot == ShotType.BEAM);
     }
 
 }

@@ -2,26 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeamShot : MonoBehaviour{
-    
+public class BeamShot : MonoBehaviour {
+
     private GameObject instance;
     public Vector3 direction;
     private GameObject bulletSpawn;
     public LineRenderer lineRenderer;
+    [HideInInspector] public bool isShooting = false;
 
+    public float initialWidth;
+    public float widthIncrement;
+    public float maxWidth;
 
     // Start is called before the first frame update
     void Start(){
-        //get the bulletSpawn obkect
+        //get the bulletSpawn object
         bulletSpawn = transform.GetChild(0).gameObject;
     }
 
-    public void Shoot() {
+    public void Shoot(){
+        TurnOn();
+    }
 
+    public void TurnOn(){
         RaycastHit2D hitInfo = Physics2D.Raycast(bulletSpawn.transform.position, direction);
+        
+        lineRenderer.startWidth = initialWidth + 0.1f;
+        lineRenderer.endWidth = initialWidth;
 
-        lineRenderer.SetPosition(0, bulletSpawn.transform.position);
-        lineRenderer.SetPosition(1, bulletSpawn.transform.position + direction * 100);
+        lineRenderer.enabled = true;
+
+        /*lineRenderer.SetPosition(0, bulletSpawn.transform.position);
+        lineRenderer.SetPosition(1, bulletSpawn.transform.position + direction * 100);*/
 
         if (hitInfo){
             /*Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
@@ -32,12 +44,24 @@ public class BeamShot : MonoBehaviour{
             lineRenderer.SetPosition(0, bulletSpawn.transform.position);
             lineRenderer.SetPosition(1, hitInfo.point);
             */
-        }else{
+        } else{
             lineRenderer.SetPosition(0, bulletSpawn.transform.position);
             lineRenderer.SetPosition(1, bulletSpawn.transform.position + direction * 100);
         }
 
+        isShooting = true;
         
+    }
+
+    public void TurnOff(){
+        lineRenderer.enabled = false;
+    }
+
+    public void IncreaseWidth(){
+        if(lineRenderer.startWidth < maxWidth) {
+            lineRenderer.startWidth += widthIncrement;
+            lineRenderer.endWidth += widthIncrement;
+        }        
     }
 
 }

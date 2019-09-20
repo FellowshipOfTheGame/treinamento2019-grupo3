@@ -69,11 +69,11 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Positions:
-  - {x: -13.961123, y: -2.2956176, z: 0}
-  - {x: 86.03888, y: -2.2956176, z: 0}
+  - {x: -21.556326, y: -3.2287862, z: 0}
+  - {x: 78.44367, y: -3.2287862, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
