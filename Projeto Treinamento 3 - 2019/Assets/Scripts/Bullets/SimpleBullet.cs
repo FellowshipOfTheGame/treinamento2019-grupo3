@@ -5,13 +5,10 @@ using UnityEngine;
 public class SimpleBullet : MonoBehaviour{
 
     public float speed;
-    public float deactivateTimer;
     public Vector3 direction;
 
     // Start is called before the first frame update
     void Start(){
-        //prepare the object to be deactivated
-        Destroy(gameObject, deactivateTimer);
     }
 
     // Update is called once per frame

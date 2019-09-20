@@ -12,7 +12,6 @@ public class ConeBullet : MonoBehaviour{
     // Start is called before the first frame update
     void Start() {
         //prepare the object to be deactivated
-        Destroy(gameObject, deactivateTimer);
         Rotate();
     }
 

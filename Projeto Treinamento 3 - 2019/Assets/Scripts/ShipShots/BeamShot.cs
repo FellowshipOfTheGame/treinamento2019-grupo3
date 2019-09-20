@@ -9,6 +9,7 @@ public class BeamShot : MonoBehaviour {
     private GameObject bulletSpawn;
     public LineRenderer lineRenderer;
     [HideInInspector] public bool isShooting = false;
+    [HideInInspector] public bool reachedMaxWidht = false;
 
     public float initialWidth;
     public float widthIncrement;
@@ -23,13 +24,12 @@ public class BeamShot : MonoBehaviour {
     public void Shoot(){
         TurnOn();
     }
-
+    
     public void TurnOn(){
         RaycastHit2D hitInfo = Physics2D.Raycast(bulletSpawn.transform.position, direction);
         
-        lineRenderer.startWidth = initialWidth + 0.1f;
+        lineRenderer.startWidth = initialWidth;
         lineRenderer.endWidth = initialWidth;
-
         lineRenderer.enabled = true;
 
         /*lineRenderer.SetPosition(0, bulletSpawn.transform.position);
@@ -39,11 +39,11 @@ public class BeamShot : MonoBehaviour {
             /*Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
             if(enemy){
                 enemy.TakeDamage();
-            }
+            }*/
 
             lineRenderer.SetPosition(0, bulletSpawn.transform.position);
             lineRenderer.SetPosition(1, hitInfo.point);
-            */
+            
         } else{
             lineRenderer.SetPosition(0, bulletSpawn.transform.position);
             lineRenderer.SetPosition(1, bulletSpawn.transform.position + direction * 100);
@@ -55,12 +55,16 @@ public class BeamShot : MonoBehaviour {
 
     public void TurnOff(){
         lineRenderer.enabled = false;
+        reachedMaxWidht = false;
     }
 
     public void IncreaseWidth(){
         if(lineRenderer.startWidth < maxWidth) {
             lineRenderer.startWidth += widthIncrement;
             lineRenderer.endWidth += widthIncrement;
+        } else {
+            reachedMaxWidht = true;
+            Invoke("TurnOff", 0.5f);
         }        
     }
 

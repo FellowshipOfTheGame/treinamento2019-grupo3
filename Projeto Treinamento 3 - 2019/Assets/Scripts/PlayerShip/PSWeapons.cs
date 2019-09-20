@@ -6,7 +6,7 @@ enum ShotType{ SIMPLE, CONE, BEAM, MISSILE };
 
 public class PSWeapons : MonoBehaviour {
 
-    private ShotType currentShot = ShotType.BEAM;
+    private ShotType currentShot = ShotType.CONE;
 
     private SimpleShot simpleShot;
     private ConeShot coneShot;

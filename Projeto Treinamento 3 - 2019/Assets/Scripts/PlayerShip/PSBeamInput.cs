@@ -25,16 +25,17 @@ public class PSBeamInput : MonoBehaviour{
             GetComponent<PSInput>().enabled = false;
         }
 
-        if (beam.isShooting) {            
-            if(Input.GetButtonUp(playerController + "B")) {
+        if (beam.isShooting) {
+            if (Input.GetButtonUp(playerController + "B")) {
                 //the beam shot is finished
+                //if the beam reached its max width, then it will automatically call TurnOff method
+                if(!beam.reachedMaxWidht) beam.TurnOff();
                 beam.isShooting = false;
-                beam.TurnOff();
                 GetComponent<PSInput>().enabled = true;
-            } else{
+            } else {
                 beam.IncreaseWidth();
             }
-        }       
+        }
     }
     
 }
