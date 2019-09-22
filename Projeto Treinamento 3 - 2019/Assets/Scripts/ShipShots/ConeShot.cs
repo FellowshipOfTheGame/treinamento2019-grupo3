@@ -10,13 +10,26 @@ public class ConeShot : MonoBehaviour{
     private GameObject bulletSpawn;
     private float openingAngle;
 
+    private bool canShoot = true;
+    private float attackTimer;
+    public float shotTimer;
+
     // Start is called before the first frame update
     void Start(){
         bulletSpawn = transform.GetChild(0).gameObject;
     }
 
+    void Update(){
+        canShoot = ((attackTimer += Time.deltaTime) > shotTimer);
+    }
+
+    public bool CanShoot(){
+        return canShoot;
+    }
+
     public void Shoot() {
 
+        attackTimer = 0f;
         openingAngle = 60;
 
         //Instantiate 5 cone bullet objects
@@ -26,6 +39,8 @@ public class ConeShot : MonoBehaviour{
             bulletInstance.GetComponent<ConeBullet>().angle = openingAngle;
             openingAngle -= 30f;
         }
+
+        canShoot = false;
     }
 
 }

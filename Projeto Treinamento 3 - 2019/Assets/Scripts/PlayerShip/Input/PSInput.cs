@@ -6,17 +6,18 @@ public class PSInput : MonoBehaviour{
 
     private Vector3 inputDirection;
     private PSMove movePlayerShip;
-    private PSShoot shootPlayerShip;
+    private PSWeapons shootPlayerShip;
 
     //the player controller(Needs a controller selection manager later):
     //Test -> for testing, with keyboard
     //J1, J2, J3, J4 -> xbox controllers
     public string playerController;
 
+
     // Start is called before the first frame update
     void Start(){
         movePlayerShip = GetComponent<PSMove>();
-        shootPlayerShip = GetComponent<PSShoot>();
+        shootPlayerShip = GetComponent<PSWeapons>();
     }
 
     // Update is called once per frame
@@ -24,19 +25,21 @@ public class PSInput : MonoBehaviour{
         MovementInput();
         ShootInput();
     }
-    
 
-    void MovementInput() {
+
+    void MovementInput(){
+        
         inputDirection = new Vector3(Input.GetAxisRaw(playerController + "Horizontal"),
                                      Input.GetAxisRaw(playerController + "Vertical"),
                                      0f);
-        if(inputDirection.x != 0 || inputDirection.y != 0) movePlayerShip.Move(inputDirection);
+        if (inputDirection.x != 0 || inputDirection.y != 0) movePlayerShip.Move(inputDirection);
+        
     }
 
-    void ShootInput() {
+    void ShootInput(){
         if (Input.GetButton(playerController + "B")) {
             //if B button was pressed(also space key for testing)
-            shootPlayerShip.Shoot();      
+            shootPlayerShip.Shoot();
         }
     }
 
