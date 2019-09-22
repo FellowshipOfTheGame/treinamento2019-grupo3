@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum ShotType{ SIMPLE, CONE, BEAM, MISSILE };
+public enum ShotType{ SIMPLE, CONE, BEAM, MISSILE };
 
 public class PSWeapons : MonoBehaviour {
 
-    private ShotType currentShot = ShotType.CONE;
+    public ShotType currentShot = ShotType.SIMPLE;
 
     private SimpleShot simpleShot;
     private ConeShot coneShot;
@@ -25,7 +25,7 @@ public class PSWeapons : MonoBehaviour {
         beamShot.direction = Vector3.right;
         
     }
-    
+
     public void Shoot() {
 
         switch((int)currentShot){
