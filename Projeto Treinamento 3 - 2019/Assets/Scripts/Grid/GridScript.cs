@@ -20,11 +20,6 @@ public class GridScript : MonoBehaviour {
 	public int cursorX = 0;
 	public int cursorY = 0;
 	public float cursorSpeed = 10;
-	public KeyCode upKey;
-	public KeyCode downKey;
-	public KeyCode leftKey;
-	public KeyCode rightKey;
-	public KeyCode action1Key;
 
 	// Outros
 	public Camera mainCamera;
@@ -35,16 +30,15 @@ public class GridScript : MonoBehaviour {
 
     void Update(){
         AjustToScreenSize();
-        CursorInput();
+        
        	RefreshCursorPosition();
     }
 
-    void CursorInput(){
-
-    	if (Input.GetKeyDown(upKey)) cursorY++;
-    	if (Input.GetKeyDown(downKey)) cursorY--;
-    	if (Input.GetKeyDown(leftKey)) cursorX--;
-    	if (Input.GetKeyDown(rightKey)) cursorX++;
+    public void CursorInput(bool up, bool down, bool left, bool right){
+    	if (up) cursorY++;
+    	if (down) cursorY--;
+    	if (left) cursorX--;
+    	if (right) cursorX++;
     	cursorX = Mathf.Clamp(cursorX, 0, numberOfGridColumns-1);
     	cursorY = Mathf.Clamp(cursorY, 0, numberOfGridRows-1);
     }
