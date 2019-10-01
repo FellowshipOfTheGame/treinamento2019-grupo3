@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4107134094844421132}
   - component: {fileID: -3443526420146102315}
   - component: {fileID: -4330531423110628477}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: 'ConeBullet '
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5587719970040693649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.18, y: -0.21, z: 0}
+  m_LocalPosition: {x: -13.54, y: -0.08, z: 0}
   m_LocalScale: {x: 2.5, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

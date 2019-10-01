@@ -11,7 +11,8 @@ public class PSWeapons : MonoBehaviour {
     private SimpleShot simpleShot;
     private ConeShot coneShot;
     private BeamShot beamShot;
-    
+    private HomingMissile missileShot;
+
     // Start is called before the first frame update
     void Start(){
 
@@ -23,7 +24,10 @@ public class PSWeapons : MonoBehaviour {
 
         beamShot = GetComponent<BeamShot>();
         beamShot.direction = Vector3.right;
-        
+
+        missileShot = GetComponent<HomingMissile>();
+        missileShot.direction = Vector3.right;
+
     }
 
     public void Shoot() {
@@ -39,7 +43,9 @@ public class PSWeapons : MonoBehaviour {
             case ((int)ShotType.BEAM):
                 beamShot.Shoot();
                 break;
-            //...
+            case ((int)ShotType.MISSILE):
+                if (missileShot.CanShoot()) missileShot.Shoot();
+                break;
         }
 
     }

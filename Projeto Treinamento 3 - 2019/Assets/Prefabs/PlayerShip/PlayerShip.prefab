@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7968292864057921856}
-  - component: {fileID: 6648159087005588674}
+  - component: {fileID: 2519382090030030952}
   - component: {fileID: 3913618516091448616}
   - component: {fileID: 1347284674544632559}
   - component: {fileID: 7539801983827690652}
@@ -176,6 +176,8 @@ GameObject:
   - component: {fileID: 8639802150640633662}
   - component: {fileID: 2187382332882188918}
   - component: {fileID: 6189975654703868903}
+  - component: {fileID: 5148239205698349112}
+  - component: {fileID: 4376598629599850340}
   m_Layer: 8
   m_Name: PlayerShip
   m_TagString: PlayerShip
@@ -191,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8606092818743285363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1049441260875110781}
@@ -199,7 +201,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6648159087005588674
+--- !u!212 &2519382090030030952
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,9 +237,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 78489b363b7b7c04fb875517b5443b79, type: 3}
-  m_Color: {r: 0.32809716, g: 0.8013826, b: 0.9528302, a: 1}
+  m_Color: {r: 0.48504806, g: 0.9433962, b: 0.9244806, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -260,10 +262,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3, y: 0}
+  m_Offset: {x: -0.10612881, y: 0.021225393}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.38, y: 0.5}
     oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
@@ -271,7 +273,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.6179368, y: 1.7028381}
   m_EdgeRadius: 0
 --- !u!50 &1347284674544632559
 Rigidbody2D:
@@ -349,10 +351,10 @@ MonoBehaviour:
   horizontalFrontSpeed: 30
   horizontalBackSpeed: 10
   diagonalSpeed: 30
-  minY: -18.5
-  maxY: 18.5
-  minX: -34.5
-  maxX: 5
+  minY: -18.7
+  maxY: 18.7
+  minX: -34.7
+  maxX: 3.5
 --- !u!114 &8655363347450929895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,3 +419,31 @@ MonoBehaviour:
   initialWidth: 0.1
   widthIncrement: 0.01
   maxWidth: 2
+--- !u!114 &5148239205698349112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606092818743285363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3489a263cb7cfbc4b90d902828118662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4376598629599850340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606092818743285363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715903a7eb56233438c2417b283dd50e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missileBullet: {fileID: 5587719970040693649, guid: ab59bc012e6138942bf8b2a71e45a95b,
+    type: 3}
+  direction: {x: 0, y: 0, z: 0}
+  shotTimer: 3

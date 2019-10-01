@@ -17,6 +17,7 @@ public class ConeShot : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         bulletSpawn = transform.GetChild(0).gameObject;
+        attackTimer = shotTimer;
     }
 
     void Update(){

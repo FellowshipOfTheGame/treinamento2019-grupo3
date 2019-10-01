@@ -17,6 +17,7 @@ public class SimpleShot : MonoBehaviour{
     void Start(){
         //get the bulletSpawn obkect
         bulletSpawn = transform.GetChild(0).gameObject;
+        attackTimer = shotTimer;
     }
 
     void Update(){
