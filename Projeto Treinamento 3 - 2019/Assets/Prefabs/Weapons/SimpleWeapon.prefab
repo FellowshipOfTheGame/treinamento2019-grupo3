@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
+  bulletSpawn: {fileID: 0}
 --- !u!114 &98130824355637833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,3 +62,4 @@ MonoBehaviour:
     type: 3}
   direction: {x: 0, y: 0, z: 0}
   shotTimer: 0.5
+  damageAmount: 10

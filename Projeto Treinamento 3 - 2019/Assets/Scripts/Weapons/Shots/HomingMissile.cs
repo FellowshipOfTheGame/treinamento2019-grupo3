@@ -14,7 +14,12 @@ public class HomingMissile : MonoBehaviour{
 
     private bool canShoot = true;
     private float attackTimer;
-    public float shotTimer; 
+    public float shotTimer = 5;
+
+    public float damageAmount = 10;
+
+    public int nMissiles = 5;
+    public float timeBetweenMissiles = 0.2f;
 
     // Start is called before the first frame update
     void Start(){
@@ -36,28 +41,42 @@ public class HomingMissile : MonoBehaviour{
 
             attackTimer = 0f;
 
-            //Instantiate the simple bullet object
-            instance = Instantiate(missileBullet, bulletSpawn.transform.position, Quaternion.identity);
-            target = targetManager.GetTarget();
+            float time = 0;
 
-            if (target != null) {
+            for (int i = 0; i < nMissiles; i++) {
 
-                instance.GetComponent<MissileBullet>().target = target;
-                instance.GetComponent<MissileBullet>().isRandom = false;
-
-            } else {
-
-                instance.GetComponent<MissileBullet>().isRandom = true;
+                Invoke("InstantiateMissile", time);
+                time += timeBetweenMissiles; 
 
             }
-
-            instance.GetComponent<MissileBullet>().direction = direction;
-            instance.GetComponent<MissileBullet>().targetManager = targetManager;
 
             canShoot = false;
 
         }
 
+    }
+
+    private void InstantiateMissile(){
+
+        //Instantiate the simple bullet object
+        instance = Instantiate(missileBullet, bulletSpawn.transform.position, Quaternion.identity);
+        target = targetManager.GetTarget();
+
+        if (target != null) {
+
+            instance.GetComponent<MissileBullet>().target = target;
+            instance.GetComponent<MissileBullet>().isRandom = false;
+
+        } else {
+
+            instance.GetComponent<MissileBullet>().isRandom = true;
+
+        }
+
+        instance.GetComponent<MissileBullet>().direction = direction;
+        instance.GetComponent<MissileBullet>().targetManager = targetManager;
+        instance.GetComponent<DamageObjectCollision>().UpdateDamageAmount(damageAmount);
+        instance.layer = gameObject.layer;
     }
 
     void SetDirection(Vector3 newDirection){

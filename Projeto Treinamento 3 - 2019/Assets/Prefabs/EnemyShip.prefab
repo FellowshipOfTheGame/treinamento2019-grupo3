@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 240824123701299258}
   m_Layer: 0
   m_Name: EnemyShip
-  m_TagString: Untagged
+  m_TagString: EnemyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2927363967339240811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.2, y: -0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2927363968324737753}
@@ -92,9 +92,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.24, y: 0}
-      - {x: 1.27, y: 1.26}
-      - {x: 1.27, y: -1.28}
+    - - {x: -1.5384089, y: 0}
+      - {x: 0.9516972, y: 1.26}
+      - {x: 0.9715912, y: -0.019469678}
+      - {x: 0.9516972, y: -1.2601061}
 --- !u!1 &2927363968324737752
 GameObject:
   m_ObjectHideFlags: 0

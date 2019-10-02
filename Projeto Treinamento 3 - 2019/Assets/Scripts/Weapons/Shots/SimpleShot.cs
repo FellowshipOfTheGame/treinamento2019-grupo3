@@ -13,6 +13,8 @@ public class SimpleShot : MonoBehaviour{
     private float attackTimer;
     public float shotTimer; 
 
+    public float damageAmount = 10;
+
     // Start is called before the first frame update
     void Start(){
         attackTimer = shotTimer;
@@ -36,6 +38,8 @@ public class SimpleShot : MonoBehaviour{
             instance = Instantiate(simpleBullet, bulletSpawn.transform.position, Quaternion.identity);
             //set the direction of the bullet
             instance.GetComponent<SimpleBullet>().direction = direction;
+            instance.layer = gameObject.layer;
+            instance.GetComponent<DamageObjectCollision>().UpdateDamageAmount(damageAmount);
 
             canShoot = false;
         }

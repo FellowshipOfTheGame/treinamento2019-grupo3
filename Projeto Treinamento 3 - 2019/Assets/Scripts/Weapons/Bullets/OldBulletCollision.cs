@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletCollision : MonoBehaviour{
+public class OldBulletCollision : MonoBehaviour{
 
     private void OnTriggerEnter2D(Collider2D collision){
 

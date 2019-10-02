@@ -7,9 +7,9 @@ public class PSMove : MonoBehaviour{
     public float verticalSpeed, horizontalFrontSpeed, horizontalBackSpeed, diagonalSpeed;
     private float speed;
     public float minY, maxY, minX, maxX;
-    private float speedPercentage = 1;
+    private float speedPercentage = 100;
     private Vector3 direction;
-    public float reducedSpeedPercentage;
+    public float reducedSpeedPercentage = 50;
 
     private void Start(){
         direction.x = 0;
@@ -34,7 +34,7 @@ public class PSMove : MonoBehaviour{
         }
 
         //move
-        transform.Translate(speed * speedPercentage * direction.normalized * Time.fixedDeltaTime);
+        transform.Translate(speed * (speedPercentage/100) * direction.normalized * Time.fixedDeltaTime);
 
         //make sure that the spaceship doesnt get out of the screen
         Vector3 aux_position = transform.position;
@@ -52,7 +52,7 @@ public class PSMove : MonoBehaviour{
     }
 
     public void SetNormalSpeed(){
-        speedPercentage = 1;
+        speedPercentage = 100;
     }
 
 }

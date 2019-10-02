@@ -7,7 +7,8 @@ public class LaserShot : MonoBehaviour {
     private GameObject instance;
     public Vector3 direction;
     private GameObject bulletSpawn;
-    public LineRenderer lineRenderer;
+    public GameObject laser;
+    private LineRenderer lineRenderer;
     [HideInInspector] public bool isShooting = false;
     [HideInInspector] public bool reachedMaxWidht = false;
 
@@ -15,10 +16,20 @@ public class LaserShot : MonoBehaviour {
     public float widthIncrement;
     public float maxWidth;
 
+    public float initialDamage = 0.1f;
+    public float damageIncreasePerFrame = 0.1f;
+    private float damage;
+
     private RaycastHit2D hitInfo;
 
     // Start is called before the first frame update
     void Start(){
+        lineRenderer = laser.GetComponent<LineRenderer>();
+        laser.layer = gameObject.layer;
+        //Debug.Log(gameObject.layer);
+        if(LayerMask.LayerToName(laser.layer) == "PlayerShip") {
+            laser.tag = "PSLaser";
+        }
     }
 
     public void Shoot(){
@@ -30,7 +41,8 @@ public class LaserShot : MonoBehaviour {
         }
     }
     public void TurnOn(){
-        
+
+        damage = initialDamage;
         lineRenderer.startWidth = initialWidth;
         lineRenderer.endWidth = initialWidth;
         lineRenderer.enabled = true;
@@ -41,18 +53,36 @@ public class LaserShot : MonoBehaviour {
         
     }
 
+    public void IncreaseWidth(){
+
+        damage += damageIncreasePerFrame;
+        UpdateLaserPosition();
+        if (lineRenderer.startWidth < maxWidth) {
+            lineRenderer.startWidth += widthIncrement;
+            lineRenderer.endWidth += widthIncrement;
+        } else {
+            reachedMaxWidht = true;
+            //Invoke("TurnOff", 0.5f);
+        }
+
+    }
+
     private void UpdateLaserPosition(){
 
         hitInfo = Physics2D.Raycast(bulletSpawn.transform.position, direction);
 
         lineRenderer.SetPosition(0, bulletSpawn.transform.position);
 
-        if (hitInfo) {
-            /*Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
-            if(enemy){
-                enemy.TakeDamage();
+        if (hitInfo && hitInfo.collider.tag != "PlayerShip" && hitInfo.collider.tag != "PSLaser") {
+
+            //try to find a HP component in the collided object
+            /*
+            collidedHP = hitInfo.collider.GetComponent<HP>();
+            if (collidedHP) {
+                collidedHP.TakeDamage(damage);
             }*/
 
+            Debug.Log(hitInfo.collider.name);
             
             lineRenderer.SetPosition(1, hitInfo.point);
 
@@ -66,17 +96,6 @@ public class LaserShot : MonoBehaviour {
         lineRenderer.enabled = false;
         reachedMaxWidht = false;
         isShooting = false;
-    }
-
-    public void IncreaseWidth(){
-        UpdateLaserPosition();
-        if (lineRenderer.startWidth < maxWidth) {
-            lineRenderer.startWidth += widthIncrement;
-            lineRenderer.endWidth += widthIncrement;
-        } else {
-            reachedMaxWidht = true; 
-            //Invoke("TurnOff", 0.5f);
-        }        
     }
 
     void SetDirection(Vector3 newDirection){

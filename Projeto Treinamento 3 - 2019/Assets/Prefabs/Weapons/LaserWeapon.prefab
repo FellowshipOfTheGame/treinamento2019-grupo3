@@ -60,12 +60,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
-  lineRenderer: {fileID: 6333056744193749714}
+  laser: {fileID: 8156894009051084518}
   isShooting: 0
   reachedMaxWidht: 0
   initialWidth: 0.1
   widthIncrement: 0.01
   maxWidth: 2
+  initialDamage: 0.1
+  damageIncreasePerFrame: 0.1
 --- !u!1 &8156894009051084518
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7578970991752538539}
   - component: {fileID: 6333056744193749714}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Laser
   m_TagString: Beam
   m_Icon: {fileID: 0}

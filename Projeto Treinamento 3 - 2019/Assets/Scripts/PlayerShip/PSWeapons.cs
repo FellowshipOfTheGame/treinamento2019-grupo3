@@ -83,6 +83,7 @@ public class PSWeapons : MonoBehaviour {
         currentWeapon.transform.parent = gameObject.transform;
         currentWeapon.GetComponent<Weapon>().direction = transform.right;
         currentWeapon.GetComponent<Weapon>().bulletSpawn = transform.GetChild(0).gameObject;
+        currentWeapon.layer = LayerMask.NameToLayer("PlayerShip");
 
     }
 
