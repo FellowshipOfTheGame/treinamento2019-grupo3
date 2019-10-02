@@ -16,7 +16,6 @@ public class ConeShot : MonoBehaviour{
 
     // Start is called before the first frame update
     void Start(){
-        bulletSpawn = transform.GetChild(0).gameObject;
         attackTimer = shotTimer;
     }
 
@@ -30,18 +29,31 @@ public class ConeShot : MonoBehaviour{
 
     public void Shoot() {
 
-        attackTimer = 0f;
-        openingAngle = 60;
+        if (CanShoot()) {
 
-        //Instantiate 5 cone bullet objects
-        for (int i=0; i<5; i++) {
-            bulletInstance = Instantiate(coneBullet, bulletSpawn.transform.position, Quaternion.identity);
-            bulletInstance.GetComponent<ConeBullet>().direction = direction;
-            bulletInstance.GetComponent<ConeBullet>().angle = openingAngle;
-            openingAngle -= 30f;
+            attackTimer = 0f;
+            openingAngle = 60;
+
+            //Instantiate 5 cone bullet objects
+            for (int i = 0; i < 5; i++) {
+                bulletInstance = Instantiate(coneBullet, bulletSpawn.transform.position, Quaternion.identity);
+                bulletInstance.GetComponent<ConeBullet>().direction = direction;
+                bulletInstance.GetComponent<ConeBullet>().angle = openingAngle;
+                openingAngle -= 30f;
+            }
+
+            canShoot = false;
+
         }
 
-        canShoot = false;
+    }
+
+    void SetDirection(Vector3 newDirection){
+        direction = newDirection;
+    }
+
+    void SetBulletSpawn(GameObject bulletSpawn){
+        this.bulletSpawn = bulletSpawn;
     }
 
 }

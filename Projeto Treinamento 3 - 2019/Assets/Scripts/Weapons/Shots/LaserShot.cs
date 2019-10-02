@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeamShot : MonoBehaviour {
+public class LaserShot : MonoBehaviour {
 
     private GameObject instance;
     public Vector3 direction;
@@ -17,11 +17,10 @@ public class BeamShot : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start(){
-        //get the bulletSpawn object
-        bulletSpawn = transform.GetChild(0).gameObject;
     }
 
     public void Shoot(){
+        //if(CanShoot()) TurnOn();
         TurnOn();
     }
     
@@ -31,9 +30,6 @@ public class BeamShot : MonoBehaviour {
         lineRenderer.startWidth = initialWidth;
         lineRenderer.endWidth = initialWidth;
         lineRenderer.enabled = true;
-
-        /*lineRenderer.SetPosition(0, bulletSpawn.transform.position);
-        lineRenderer.SetPosition(1, bulletSpawn.transform.position + direction * 100);*/
 
         if (hitInfo){
             /*Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
@@ -46,7 +42,7 @@ public class BeamShot : MonoBehaviour {
             
         } else{
             lineRenderer.SetPosition(0, bulletSpawn.transform.position);
-            lineRenderer.SetPosition(1, bulletSpawn.transform.position + direction * 100);
+            lineRenderer.SetPosition(1, bulletSpawn.transform.position + (direction * 100));
         }
 
         isShooting = true;
@@ -66,6 +62,15 @@ public class BeamShot : MonoBehaviour {
             reachedMaxWidht = true;
             Invoke("TurnOff", 0.5f);
         }        
+    }
+
+    void SetDirection(Vector3 newDirection){
+        direction = newDirection;
+    }
+
+
+    void SetBulletSpawn(GameObject bulletSpawn){
+        this.bulletSpawn = bulletSpawn;
     }
 
 }

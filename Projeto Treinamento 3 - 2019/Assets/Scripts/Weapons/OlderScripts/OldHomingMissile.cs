@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomingMissile : MonoBehaviour{
+public class OldHomingMissile : MonoBehaviour{
 
     [SerializeField] private GameObject missileBullet;
     private GameObject instance;

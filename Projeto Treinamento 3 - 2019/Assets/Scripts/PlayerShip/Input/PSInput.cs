@@ -21,7 +21,7 @@ public class PSInput : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update(){
+    void FixedUpdate(){
         MovementInput();
         ShootInput();
     }

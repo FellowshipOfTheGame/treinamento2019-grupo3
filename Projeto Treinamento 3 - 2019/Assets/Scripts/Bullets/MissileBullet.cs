@@ -21,7 +21,7 @@ public class MissileBullet : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update(){
+    void FixedUpdate(){
         if (isRandom) MoveRandomly();
         else MoveTeleguided();
     }
