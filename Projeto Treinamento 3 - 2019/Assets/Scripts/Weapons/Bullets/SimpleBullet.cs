@@ -2,34 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConeBullet : MonoBehaviour{
+public class SimpleBullet : MonoBehaviour{
 
     public float speed;
-    public float deactivateTimer;
     public Vector3 direction;
-    public float angle;
 
     // Start is called before the first frame update
-    void Start() {
-        //prepare the object to be deactivated
-        Rotate();
+    void Start(){
     }
 
     // Update is called once per frame
-    void FixedUpdate() {
+    void FixedUpdate(){
         Move();
     }
 
-    void Rotate() {
-        transform.Rotate(new Vector3(0f, 0f, angle));
-    }
 
     void Move() {
 
         //Just go to the right direction in the screen
-        transform.Translate(direction * Time.deltaTime * speed);
+        transform.Translate(direction * Time.fixedDeltaTime * speed);
 
     }
-
 
 }

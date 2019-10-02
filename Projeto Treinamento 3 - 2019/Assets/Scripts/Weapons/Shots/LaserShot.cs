@@ -15,52 +15,67 @@ public class LaserShot : MonoBehaviour {
     public float widthIncrement;
     public float maxWidth;
 
+    private RaycastHit2D hitInfo;
+
     // Start is called before the first frame update
     void Start(){
     }
 
     public void Shoot(){
-        //if(CanShoot()) TurnOn();
-        TurnOn();
+
+        if (!isShooting) TurnOn();
+        else {
+            if (!reachedMaxWidht) IncreaseWidth();
+            else TurnOff();
+        }
     }
-    
     public void TurnOn(){
-        RaycastHit2D hitInfo = Physics2D.Raycast(bulletSpawn.transform.position, direction);
         
         lineRenderer.startWidth = initialWidth;
         lineRenderer.endWidth = initialWidth;
         lineRenderer.enabled = true;
 
-        if (hitInfo){
+        UpdateLaserPosition();
+        
+        isShooting = true;
+        
+    }
+
+    private void UpdateLaserPosition(){
+
+        hitInfo = Physics2D.Raycast(bulletSpawn.transform.position, direction);
+
+        lineRenderer.SetPosition(0, bulletSpawn.transform.position);
+
+        if (hitInfo) {
             /*Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
             if(enemy){
                 enemy.TakeDamage();
             }*/
 
-            lineRenderer.SetPosition(0, bulletSpawn.transform.position);
-            lineRenderer.SetPosition(1, hitInfo.point);
             
-        } else{
-            lineRenderer.SetPosition(0, bulletSpawn.transform.position);
+            lineRenderer.SetPosition(1, hitInfo.point);
+
+        } else {
             lineRenderer.SetPosition(1, bulletSpawn.transform.position + (direction * 100));
         }
 
-        isShooting = true;
-        
     }
 
     public void TurnOff(){
         lineRenderer.enabled = false;
         reachedMaxWidht = false;
+        isShooting = false;
     }
 
     public void IncreaseWidth(){
-        if(lineRenderer.startWidth < maxWidth) {
+        UpdateLaserPosition();
+        if (lineRenderer.startWidth < maxWidth) {
             lineRenderer.startWidth += widthIncrement;
             lineRenderer.endWidth += widthIncrement;
         } else {
-            reachedMaxWidht = true;
-            Invoke("TurnOff", 0.5f);
+            reachedMaxWidht = true; 
+            //Invoke("TurnOff", 0.5f);
         }        
     }
 

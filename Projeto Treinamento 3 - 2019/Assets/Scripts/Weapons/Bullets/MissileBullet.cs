@@ -34,7 +34,7 @@ public class MissileBullet : MonoBehaviour{
         if (target != null) MoveTeleguided();
         else {
             //Just go to the right direction in the screen
-            transform.Translate(direction * Time.deltaTime * speed);
+            transform.Translate(direction * Time.fixedDeltaTime * speed);
 
             transform.Rotate(0f, 0f, Random.Range(-5f, 5f));
         }
@@ -53,7 +53,7 @@ public class MissileBullet : MonoBehaviour{
             rotateAmount = Vector3.Cross(direction, targetDirection).z;
 
             transform.Rotate(0f, 0f, rotateAmount/2f);
-            transform.Translate(direction * Time.deltaTime * speed);
+            transform.Translate(direction * Time.fixedDeltaTime * speed);
         }
     }
 

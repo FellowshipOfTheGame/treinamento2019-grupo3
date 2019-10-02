@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PSLaserInput : MonoBehaviour{
+public class OldPSLaserInput : MonoBehaviour{
 
     private PSWeapons shootPlayerShip;
     private LaserShot laser;
@@ -20,7 +20,7 @@ public class PSLaserInput : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        if (shootPlayerShip.isLaser() && Input.GetButtonDown(playerController + "B")) {
+        if (shootPlayerShip.IsLaser() && Input.GetButtonDown(playerController + "B")) {
             shootPlayerShip.Shoot();
             GetComponent<PSInput>().enabled = false;
         }

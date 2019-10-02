@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 1347284674544632559}
   - component: {fileID: 7539801983827690652}
   - component: {fileID: 5762281528880369929}
-  - component: {fileID: 1859013161379935926}
   - component: {fileID: 1989635623532439558}
   - component: {fileID: 1762028010633654119}
   m_Layer: 8
@@ -190,19 +189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: Test
---- !u!114 &1859013161379935926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8606092818743285363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c26f09c506dec4bb76d88a3bc65d84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: Test
 --- !u!114 &1989635623532439558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +209,7 @@ MonoBehaviour:
   maxY: 18.7
   minX: -34.7
   maxX: 3.5
+  reducedSpeedPercentage: 0.4
 --- !u!114 &1762028010633654119
 MonoBehaviour:
   m_ObjectHideFlags: 0

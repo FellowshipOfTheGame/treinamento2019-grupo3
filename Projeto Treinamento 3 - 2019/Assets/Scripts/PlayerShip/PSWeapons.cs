@@ -56,7 +56,7 @@ public class PSWeapons : MonoBehaviour {
         InstantiateWeapon(ShotType.MISSILE);
     }
 
-    public bool isLaser(){
+    public bool IsLaser(){
         return (currentShot == ShotType.LASER);
     }
 
@@ -84,6 +84,10 @@ public class PSWeapons : MonoBehaviour {
         currentWeapon.GetComponent<Weapon>().direction = transform.right;
         currentWeapon.GetComponent<Weapon>().bulletSpawn = transform.GetChild(0).gameObject;
 
+    }
+
+    public void StopShooting(){
+        currentWeapon.GetComponent<Weapon>().StopShooting();
     }
 
 }

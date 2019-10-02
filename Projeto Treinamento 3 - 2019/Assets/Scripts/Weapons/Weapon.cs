@@ -18,4 +18,9 @@ public class Weapon : MonoBehaviour{
         SendMessage("Shoot");
     }
 
+    public void StopShooting(){
+        SendMessage("TurnOff");
+        //SendMessageUpwards("SetNormalSpeed");
+    }
+
 }
