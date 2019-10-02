@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeamShot : MonoBehaviour {
+public class OldBeamShot : MonoBehaviour {
 
     private GameObject instance;
     public Vector3 direction;

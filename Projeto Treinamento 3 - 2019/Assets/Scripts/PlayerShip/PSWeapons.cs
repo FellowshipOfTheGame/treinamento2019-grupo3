@@ -2,76 +2,93 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ShotType{ SIMPLE, CONE, BEAM, MISSILE };
+public enum ShotType{ SIMPLE, CONE, LASER, MISSILE };
 
 public class PSWeapons : MonoBehaviour {
 
     public ShotType currentShot = ShotType.SIMPLE;
 
-    private SimpleShot simpleShot;
-    private ConeShot coneShot;
-    private BeamShot beamShot;
-    private HomingMissile missileShot;
+    public GameObject simpleWeapon;
+    public GameObject coneWeapon;
+    public GameObject laserWeapon;
+    public GameObject missileWeapon;
+
+    private GameObject currentWeapon;
 
     // Start is called before the first frame update
     void Start(){
-
-        simpleShot = GetComponent<SimpleShot>();
-        simpleShot.direction = Vector3.right;
-
-        coneShot = GetComponent<ConeShot>();
-        coneShot.direction = Vector3.right;
-
-        beamShot = GetComponent<BeamShot>();
-        beamShot.direction = Vector3.right;
-
-        missileShot = GetComponent<HomingMissile>();
-        missileShot.direction = Vector3.right;
+        
+        InstantiateWeapon(currentShot);
 
     }
 
     public void Shoot() {
 
-        switch((int)currentShot){
-
-            case ((int)ShotType.SIMPLE):
-                if(simpleShot.CanShoot()) simpleShot.Shoot();
-                break;
-            case ((int)ShotType.CONE):
-                if (coneShot.CanShoot()) coneShot.Shoot();
-                break;
-            case ((int)ShotType.BEAM):
-                beamShot.Shoot();
-                break;
-            case ((int)ShotType.MISSILE):
-                if (missileShot.CanShoot()) missileShot.Shoot();
-                break;
-        }
+        currentWeapon.GetComponent<Weapon>().Fire();
 
     }
 
     //method to change the type of the shot to simple
     public void ChangeShotToSimple(){
         currentShot = ShotType.SIMPLE;
+        Destroy(currentWeapon);
+        InstantiateWeapon(ShotType.SIMPLE);
     }
 
     //method to change the type of the shot to cone
     public void ChangeShotToCone(){
         currentShot = ShotType.CONE;
+        Destroy(currentWeapon);
+        InstantiateWeapon(ShotType.CONE);
     }
 
     //method to change the type of the shot to beam
-    public void ChangeShotToBeam(){
-        currentShot = ShotType.BEAM;
+    public void ChangeShotToLaser(){
+        currentShot = ShotType.LASER;
+        Destroy(currentWeapon);
+        InstantiateWeapon(ShotType.LASER);
     }
 
     //method to change the type of the shot to missile
     public void ChangeShotToMissile(){
         currentShot = ShotType.MISSILE;
+        Destroy(currentWeapon);
+        InstantiateWeapon(ShotType.MISSILE);
     }
 
-    public bool isBeam(){
-        return (currentShot == ShotType.BEAM);
+    public bool IsLaser(){
+        return (currentShot == ShotType.LASER);
+    }
+
+
+    private void InstantiateWeapon(ShotType type){
+
+        switch ((int)type) {
+
+            case 0:
+                currentWeapon = Instantiate(simpleWeapon, transform.position, Quaternion.identity);
+                break;
+            case 1:
+                currentWeapon = Instantiate(coneWeapon, transform.position, Quaternion.identity);
+                break;
+            case 2:
+                currentWeapon = Instantiate(laserWeapon, transform.position, Quaternion.identity);
+                break;
+            case 3:
+                currentWeapon = Instantiate(missileWeapon, transform.position, Quaternion.identity);
+                break;
+        }
+
+        //instantiate the weapon as a child of the shooter with his correspondent shot direction and bullet spawn position
+        currentWeapon.transform.parent = gameObject.transform;
+        currentWeapon.GetComponent<Weapon>().direction = transform.right;
+        currentWeapon.GetComponent<Weapon>().bulletSpawn = transform.GetChild(0).gameObject;
+        currentWeapon.layer = LayerMask.NameToLayer("PlayerShip");
+
+    }
+
+    public void StopShooting(){
+        currentWeapon.GetComponent<Weapon>().StopShooting();
     }
 
 }

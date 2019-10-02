@@ -5,23 +5,27 @@ using UnityEngine;
 public class MissileBullet : MonoBehaviour{
 
     
-    public float speed;
+    public float speed = 10;
     public Vector3 direction;
     public GameObject target = null;
     public Vector3 targetDirection;
     public bool isRandom;
 
     public PSTargets targetManager;
-    float rotateAmount;
+    private float rotateAmount;
+    public float rotateSpeed;
+
+    /*private Rigidbody2D rb;
+    public float rotateSpeed = 20;*/
 
     // Start is called before the first frame update
     void Start(){
         direction = transform.right;
-        
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update(){
+    void FixedUpdate(){
         if (isRandom) MoveRandomly();
         else MoveTeleguided();
     }
@@ -33,10 +37,9 @@ public class MissileBullet : MonoBehaviour{
 
         if (target != null) MoveTeleguided();
         else {
-            //Just go to the right direction in the screen
-            transform.Translate(direction * Time.deltaTime * speed);
-
-            transform.Rotate(0f, 0f, Random.Range(-5f, 5f));
+            //Just go to the right direction rotating randomly in the screen
+            transform.Translate(direction * Time.fixedDeltaTime * speed);
+            transform.Rotate(0f, 0f, Random.Range(-1f, 1f) * rotateSpeed);
         }
     }
 
@@ -52,8 +55,12 @@ public class MissileBullet : MonoBehaviour{
             targetDirection.Normalize();
             rotateAmount = Vector3.Cross(direction, targetDirection).z;
 
-            transform.Rotate(0f, 0f, rotateAmount/2f);
-            transform.Translate(direction * Time.deltaTime * speed);
+            /*rb.angularVelocity = rotateAmount * rotateSpeed;
+            rb.velocity = speed * direction;*/
+
+            transform.Rotate(0f, 0f, rotateAmount * rotateSpeed);
+            transform.Translate(targetDirection * Time.fixedDeltaTime * speed);
+
         }
     }
 

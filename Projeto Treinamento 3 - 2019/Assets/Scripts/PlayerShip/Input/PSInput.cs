@@ -13,6 +13,8 @@ public class PSInput : MonoBehaviour{
     //J1, J2, J3, J4 -> xbox controllers
     public string playerController;
 
+    private bool canMoveShoot = true;
+
 
     // Start is called before the first frame update
     void Start(){
@@ -32,15 +34,31 @@ public class PSInput : MonoBehaviour{
         inputDirection = new Vector3(Input.GetAxisRaw(playerController + "Horizontal"),
                                      Input.GetAxisRaw(playerController + "Vertical"),
                                      0f);
-        if (inputDirection.x != 0 || inputDirection.y != 0) movePlayerShip.Move(inputDirection);
+        movePlayerShip.UpdateInputDirection(inputDirection);
         
     }
+    
 
-    void ShootInput(){
+    private void ShootInput(){
+
+        if (Input.GetButtonUp(playerController + "B")) {
+
+            if (shootPlayerShip.IsLaser()) {
+
+                shootPlayerShip.StopShooting();
+                movePlayerShip.SetNormalSpeed();
+            }
+
+        }
+
         if (Input.GetButton(playerController + "B")) {
             //if B button was pressed(also space key for testing)
             shootPlayerShip.Shoot();
+            if (!shootPlayerShip.IsLaser()) movePlayerShip.SetNormalSpeed();
+            else movePlayerShip.SetSlowSpeed();
+            
         }
+
     }
 
 }
