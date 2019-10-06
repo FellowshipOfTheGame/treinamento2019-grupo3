@@ -14,6 +14,7 @@ public class GridScript : MonoBehaviour {
 
 	public float[] gridRowsPositions;
 	public float[] gridColumnsPositions;
+	public GameObject[,] tokens;
 
 	// Cursor e controles
 	public GameObject cursor;
@@ -25,12 +26,11 @@ public class GridScript : MonoBehaviour {
 	public Camera mainCamera;
 
     void Start(){
-        
+        tokens = new GameObject[numberOfGridColumns,numberOfGridRows];
     }
 
     void Update(){
-        AjustToScreenSize();
-        
+        AjustToScreenSize();        
        	RefreshCursorPosition();
     }
 
@@ -48,7 +48,6 @@ public class GridScript : MonoBehaviour {
     }
 
     void AjustToScreenSize(){
-
         gridRowsPositions = new float[numberOfGridRows];
         gridColumnsPositions = new float[numberOfGridColumns];
 
@@ -69,6 +68,28 @@ public class GridScript : MonoBehaviour {
     		gridColumnsPositions[i] = mainCamera.ScreenToWorldPoint(new Vector3(pixelPos,0,0)).x;
     	}
     }
+	
+	/*
+	public void ShowTokenOnWavesBeingBuilt(){
+		for (int w = 0; w < wavesBeingBuild.Length; w++){
+			for (int e = 0; e < wavesBeingBuild[w].enemies.Length; e++){
+				// e = row
+				// w = column
+				if (wavesBeingBuild[w].enemies[e] != null){
+					if (tokens[w,e] == null) {
+						Vector3 tokenPosition = new Vector3(gridColumnsPositions[w],gridRowsPositions[e],0);
+						tokens[w,e] = Instantiate(enemyToken, tokenPosition,  Quaternion.identity);
+					}
+				}
+				else{
+					if (tokens[w,e] != null){
+						Destroy(tokens[w,e]);
+					}
+				}
+			}
+		}
+	} */
+
 
     void OnDrawGizmos(){
     	Gizmos.color = Color.red;

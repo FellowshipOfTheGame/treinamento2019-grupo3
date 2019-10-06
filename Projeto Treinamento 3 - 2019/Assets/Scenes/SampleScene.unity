@@ -471,7 +471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &701661044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,13 +484,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384af797ec026b146896be289632a037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2927363967339240811, guid: fb09db631389d6644a72343c016c4385,
+  enemyToken: {fileID: 4761821155101321664, guid: 11b38ec0cda67ac418fd48cbc8fe78e5,
     type: 3}
   wavesBeingBuild: []
-  wavesQueued: 0
-  timeToAutoEnqueueWaves: 5.5
+  timeToAutoEnqueueWaves: 10
   autoEnqueueTimer: 0
-  timeToSpawnWave: 2
+  timeToSpawnWave: 3.5
   spawnWaveTimer: 0
 --- !u!4 &701661045
 Transform:
@@ -547,14 +546,19 @@ MonoBehaviour:
   playerController: J1
   action1Key: A
   action2Key: B
+  action3Key: X
+  action4Key: Y
   upKey: 
   downKey: 
   leftKey: 
   rightKey: 
   grid: {fileID: 701661046}
   waveManager: {fileID: 701661044}
-  inputDelay: 0.5
-  inputDelayTimer: 0
+  enemyPool:
+  - {fileID: 2927363967339240811, guid: fb09db631389d6644a72343c016c4385, type: 3}
+  - {fileID: 2927363967339240811, guid: 01fe6fb9ad529224891fd33c1d8e3cd7, type: 3}
+  - {fileID: 2927363967339240811, guid: 8f620aba4482a1241a90121f8a6ecf8d, type: 3}
+  - {fileID: 2927363967339240811, guid: 6fef482ed1b9c234b953894cd85b2913, type: 3}
 --- !u!1 &809245989
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +665,7 @@ PrefabInstance:
     - target: {fileID: 8606092818743285363, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7968292864057921856, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
         type: 3}
@@ -838,15 +842,15 @@ PrefabInstance:
       propertyPath: spawnPosition.y
       value: 9.7
       objectReference: {fileID: 0}
-    - target: {fileID: 8655363347450929895, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
-        type: 3}
-      propertyPath: currentShot
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1762028010633654119, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
         type: 3}
       propertyPath: currentShot
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655363347450929895, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
+        type: 3}
+      propertyPath: currentShot
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b, type: 3}
@@ -1004,12 +1008,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1577823876}
   m_Layer: 0
-  m_Name: EnemyWave
+  m_Name: TestWave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1577823876
 Transform:
   m_ObjectHideFlags: 0
@@ -1052,7 +1056,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618010185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30, y: -0.1, z: 0}
+  m_LocalPosition: {x: 30, y: -0.1, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 809245990}
