@@ -6,15 +6,17 @@ public class DamageObjectCollision : MonoBehaviour{
 
     private float damage;
 
+    //AQUI VAI TER INFORMACOES DE DANO
+
     private void OnTriggerEnter2D(Collider2D collision){
         
         Destroy(gameObject);
         Debug.Log(collision.name);
         //try to find a HP component in the collided object
         /*
-        collidedHP = collision.GetComponent<HP>();
-        if (collidedHP) {
-            collidedHP.TakeDamage(damage);
+        lifeManager = collision.GetComponent<LifeManager>();
+        if (lifeManager) {
+            lifeManager.TakeDamage(damage);
         }*/
     }
 

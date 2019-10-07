@@ -59,7 +59,8 @@ public class MissileBullet : MonoBehaviour{
             rb.velocity = speed * direction;*/
 
             transform.Rotate(0f, 0f, rotateAmount * rotateSpeed);
-            transform.Translate(targetDirection * Time.fixedDeltaTime * speed);
+            //transform.Translate(targetDirection * Time.fixedDeltaTime * speed);
+            transform.Translate(direction * Time.fixedDeltaTime * speed);
 
         }
     }
