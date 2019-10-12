@@ -5,8 +5,6 @@ using UnityEngine;
 public class EnemyShip : MonoBehaviour
 {
 
-    private bool targeted = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +17,4 @@ public class EnemyShip : MonoBehaviour
         
     }
 
-    public void BecomeTarget(bool b){
-        targeted = b;
-    }
-
-    public bool IsTargeted(){
-        return targeted;
-    }
 }
