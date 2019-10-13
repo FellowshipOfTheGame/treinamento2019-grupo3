@@ -13,12 +13,19 @@ public class PSWeapons : MonoBehaviour {
     public GameObject laserWeapon;
     public GameObject missileWeapon;
 
-    private GameObject currentWeapon;
+    private GameObject currentWeapon = null;
+
+    public float initialDamageSimple = 10;
+    public float initialDamageCone = 10;
+    public float initialDamageLaser = 0.1f;
+    public float initialDamageMissile = 10;
+
+    private float initialDamage = 0f;
 
     // Start is called before the first frame update
     void Start(){
         
-        InstantiateWeapon(currentShot);
+        ChangeWeapon(currentShot);
 
     }
 
@@ -28,32 +35,61 @@ public class PSWeapons : MonoBehaviour {
 
     }
 
+    public void ChangeWeapon(ShotType type) {
+
+        if (currentWeapon != null) Destroy(currentWeapon);
+
+        switch ((int)type) {
+
+            case 0:
+                ChangeToSimpleWeapon();
+                break;
+            case 1:
+                ChangeToConeWeapon();
+                break;
+            case 2:
+                ChangeToLaserWeapon();
+                break;
+            case 3:
+                ChangeToMissileWeapon();
+                break;
+        }
+
+        //instantiate the weapon as a child of the shooter with his correspondent shot direction and bullet spawn position
+        currentWeapon.transform.parent = gameObject.transform;
+        currentWeapon.GetComponent<Weapon>().direction = transform.right;
+        currentWeapon.GetComponent<Weapon>().initialDamage = initialDamage;
+        currentWeapon.GetComponent<Weapon>().bulletSpawn = transform.GetChild(0).gameObject;
+        currentWeapon.layer = LayerMask.NameToLayer("PlayerShip");
+
+    }
+
     //method to change the type of the shot to simple
-    public void ChangeShotToSimple(){
+    public void ChangeToSimpleWeapon(){
         currentShot = ShotType.SIMPLE;
-        Destroy(currentWeapon);
-        InstantiateWeapon(ShotType.SIMPLE);
+        currentWeapon = Instantiate(simpleWeapon, transform.position, Quaternion.identity);
+        initialDamage = initialDamageSimple;
     }
 
     //method to change the type of the shot to cone
-    public void ChangeShotToCone(){
+    public void ChangeToConeWeapon(){
         currentShot = ShotType.CONE;
-        Destroy(currentWeapon);
-        InstantiateWeapon(ShotType.CONE);
+        currentWeapon = Instantiate(laserWeapon, transform.position, Quaternion.identity);
+        initialDamage = initialDamageLaser;
     }
 
     //method to change the type of the shot to beam
-    public void ChangeShotToLaser(){
+    public void ChangeToLaserWeapon(){
         currentShot = ShotType.LASER;
-        Destroy(currentWeapon);
-        InstantiateWeapon(ShotType.LASER);
+        currentWeapon = Instantiate(laserWeapon, transform.position, Quaternion.identity);
+        initialDamage = initialDamageLaser;
     }
 
     //method to change the type of the shot to missile
-    public void ChangeShotToMissile(){
+    public void ChangeToMissileWeapon(){
         currentShot = ShotType.MISSILE;
-        Destroy(currentWeapon);
-        InstantiateWeapon(ShotType.MISSILE);
+        currentWeapon = Instantiate(missileWeapon, transform.position, Quaternion.identity);
+        initialDamage = initialDamageMissile;
     }
 
     public bool IsLaser(){
@@ -61,34 +97,12 @@ public class PSWeapons : MonoBehaviour {
     }
 
 
-    private void InstantiateWeapon(ShotType type){
-
-        switch ((int)type) {
-
-            case 0:
-                currentWeapon = Instantiate(simpleWeapon, transform.position, Quaternion.identity);
-                break;
-            case 1:
-                currentWeapon = Instantiate(coneWeapon, transform.position, Quaternion.identity);
-                break;
-            case 2:
-                currentWeapon = Instantiate(laserWeapon, transform.position, Quaternion.identity);
-                break;
-            case 3:
-                currentWeapon = Instantiate(missileWeapon, transform.position, Quaternion.identity);
-                break;
-        }
-
-        //instantiate the weapon as a child of the shooter with his correspondent shot direction and bullet spawn position
-        currentWeapon.transform.parent = gameObject.transform;
-        currentWeapon.GetComponent<Weapon>().direction = transform.right;
-        currentWeapon.GetComponent<Weapon>().bulletSpawn = transform.GetChild(0).gameObject;
-        currentWeapon.layer = LayerMask.NameToLayer("PlayerShip");
-
-    }
-
     public void StopShooting(){
         currentWeapon.GetComponent<Weapon>().StopShooting();
+    }
+
+    public void IncreaseDamage(float value){
+        currentWeapon.GetComponent<Weapon>().IncreaseDamageAmount(value);
     }
 
 }

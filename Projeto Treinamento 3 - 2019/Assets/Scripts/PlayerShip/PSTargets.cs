@@ -16,13 +16,14 @@ public class PSTargets : MonoBehaviour{
         
     }
 
+    /*Returns a reference to a target game object*/
     public GameObject GetTarget(){
 
         target = GameObject.FindGameObjectsWithTag("EnemyShip");
 
         for(int i=0; i<target.Length; i++) {
-            if (!target[i].GetComponent<EnemyShip>().IsTargeted()) {
-                target[i].GetComponent<EnemyShip>().BecomeTarget(true);
+            //only get targets that are enemy ships in front of the player ship
+            if (target[i].GetComponent<EnemyShip>() != null && (target[i].transform.position.x > transform.position.x)) {
                 return target[i];
             }
         }

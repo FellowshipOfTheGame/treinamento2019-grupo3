@@ -87,4 +87,12 @@ public class HomingMissile : MonoBehaviour{
         this.bulletSpawn = bulletSpawn;
     }
 
+    public void IncreaseDamage(float value){
+        damageAmount += value;
+    }
+
+    public void SetInitialDamage(float value){
+        damageAmount = value;
+    }
+
 }

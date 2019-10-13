@@ -65,7 +65,7 @@ MonoBehaviour:
   shotTimer: 5
   damageAmount: 50
   nMissiles: 5
-  timeBetweenMissiles: 0.2
+  timeBetweenMissiles: 0.5
 --- !u!114 &7463449474028028021
 MonoBehaviour:
   m_ObjectHideFlags: 0

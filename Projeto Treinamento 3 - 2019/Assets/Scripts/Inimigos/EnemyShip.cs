@@ -5,12 +5,11 @@ using UnityEngine;
 public class EnemyShip : MonoBehaviour
 {
 
-    private bool targeted = false;
-
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2 (-5,0);
+        //GetComponent<Rigidbody2D>().velocity = new Vector2 (-5,0);
+        
     }
 
     // Update is called once per frame
@@ -19,11 +18,8 @@ public class EnemyShip : MonoBehaviour
         
     }
 
-    public void BecomeTarget(bool b){
-        targeted = b;
+    private void FixedUpdate(){
+        transform.Translate(new Vector2(-5, 0) * Time.fixedDeltaTime);
     }
 
-    public bool IsTargeted(){
-        return targeted;
-    }
 }
