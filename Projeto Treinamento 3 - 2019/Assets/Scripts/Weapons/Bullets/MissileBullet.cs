@@ -42,6 +42,7 @@ public class MissileBullet : MonoBehaviour{
         
     }
 
+    //moves to the target
     void MoveTeleguided(){
 
         if (target == null) {
@@ -60,7 +61,7 @@ public class MissileBullet : MonoBehaviour{
             targetDirection = target.transform.position - gameObject.transform.position;
 
             targetDirection.Normalize();
-
+            //uses cross product to get the angle between missile direction an target direction
             rotateAmount = Vector3.Cross(direction, targetDirection).z;
 
             rb.angularVelocity = rotateAmount * rotateSpeed;
