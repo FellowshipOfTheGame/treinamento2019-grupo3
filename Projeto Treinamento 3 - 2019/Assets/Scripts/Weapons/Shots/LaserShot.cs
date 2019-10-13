@@ -62,7 +62,6 @@ public class LaserShot : MonoBehaviour {
             lineRenderer.endWidth += widthIncrement;
         } else {
             reachedMaxWidht = true;
-            //Invoke("TurnOff", 0.5f);
         }
 
     }
@@ -75,12 +74,11 @@ public class LaserShot : MonoBehaviour {
 
         if (hitInfo && hitInfo.collider.tag != "PlayerShip" && hitInfo.collider.tag != "PSLaser") {
 
-            //try to find a HP component in the collided object
-            /*
-            collidedHP = hitInfo.collider.GetComponent<HP>();
-            if (collidedHP) {
-                collidedHP.TakeDamage(damage);
-            }*/
+            //try to find a Life Container component in the collided object        
+            LifeContainer lifeContainer = hitInfo.collider.GetComponent<LifeContainer>();
+            if (lifeContainer) {
+                lifeContainer.TakeDamage(damage);
+            }
 
             Debug.Log(hitInfo.collider.name);
             
@@ -105,6 +103,16 @@ public class LaserShot : MonoBehaviour {
 
     void SetBulletSpawn(GameObject bulletSpawn){
         this.bulletSpawn = bulletSpawn;
+    }
+
+    public void IncreaseDamage(float value){
+        //it can be changed later, maybe with: damage += value;
+        damageIncreasePerFrame += value;
+    }
+
+    public void SetInitialDamage(float value){
+        //it can be changed later, maybe with: damage = value;
+        damageIncreasePerFrame = value;
     }
 
 }

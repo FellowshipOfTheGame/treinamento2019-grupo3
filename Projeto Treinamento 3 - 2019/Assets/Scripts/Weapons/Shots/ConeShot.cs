@@ -63,4 +63,12 @@ public class ConeShot : MonoBehaviour{
         this.bulletSpawn = bulletSpawn;
     }
 
+    public void IncreaseDamage(float value){
+        damageAmount += value;
+    }
+
+    public void SetInitialDamage(float value){
+        damageAmount = value;
+    }
+
 }

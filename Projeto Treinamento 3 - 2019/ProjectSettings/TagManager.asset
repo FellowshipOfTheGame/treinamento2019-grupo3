@@ -4,11 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Beam
   - PlayerShip
   - Bullet
-  - EnemyShip
   - PSLaser
+  - Enemy
+  - EnemyShip
+  - Beam
   layers:
   - Default
   - TransparentFX
@@ -19,9 +20,9 @@ TagManager:
   - 
   - 
   - PlayerShip
-  - 
-  - 
-  - 
+  - Enemy
+  - PlayerShot
+  - PowerUp
   - 
   - 
   - 

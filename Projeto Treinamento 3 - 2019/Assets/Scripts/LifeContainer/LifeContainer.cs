@@ -6,7 +6,7 @@ using UnityEngine;
 public class LifeContainer : MonoBehaviour{
 
     private float life;
-    public float initialLife = 1;
+    public float initialLife;
 
     // Start is called before the first frame update
     void Start(){
@@ -15,7 +15,7 @@ public class LifeContainer : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        if(life == 0) {
+        if(life <= 0) {
             Die();
         }
     }
@@ -29,7 +29,8 @@ public class LifeContainer : MonoBehaviour{
         life = initialLife;
     }
 
-    public void takeDamage(float damageAmount){
+    public void TakeDamage(float damageAmount){
+        Debug.Log(gameObject.name + " took " + damageAmount + " damage");
         life -= damageAmount;
     }
 
@@ -42,7 +43,7 @@ public class LifeContainer : MonoBehaviour{
         life = initialLife;
     }
 
-    public float getLifePercentage(){
+    public float GetLifePercentage(){
         return life / initialLife;
     }
 

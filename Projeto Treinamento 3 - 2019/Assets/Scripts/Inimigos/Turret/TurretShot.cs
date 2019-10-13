@@ -7,6 +7,7 @@ public class TurretShot : MonoBehaviour
     [SerializeField] private GameObject shoot;
     private float angle = 45f; //angle variation of each shot
     private int directionShooting = -1; //-1 -> down, 1 up
+
     void Start()
     {
         InvokeRepeating("Shot", 0f, 2.5f);

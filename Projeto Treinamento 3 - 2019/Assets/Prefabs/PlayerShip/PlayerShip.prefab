@@ -40,13 +40,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7968292864057921856}
   - component: {fileID: 2519382090030030952}
+  - component: {fileID: 806191185791736436}
   - component: {fileID: 3913618516091448616}
-  - component: {fileID: 1347284674544632559}
   - component: {fileID: 7539801983827690652}
   - component: {fileID: 5762281528880369929}
   - component: {fileID: 1989635623532439558}
   - component: {fileID: 1762028010633654119}
   - component: {fileID: 7941003601213328127}
+  - component: {fileID: 4513143673942821467}
   m_Layer: 8
   m_Name: PlayerShip
   m_TagString: PlayerShip
@@ -105,7 +106,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 78489b363b7b7c04fb875517b5443b79, type: 3}
   m_Color: {r: 0.48504806, g: 0.9433962, b: 0.9244806, a: 1}
   m_FlipX: 0
@@ -117,6 +118,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &806191185791736436
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606092818743285363}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &3913618516091448616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,27 +165,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6179368, y: 1.7028381}
   m_EdgeRadius: 0
---- !u!50 &1347284674544632559
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8606092818743285363}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &7539801983827690652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +233,10 @@ MonoBehaviour:
     type: 3}
   missileWeapon: {fileID: 1827987471969117552, guid: 9b96a9aeb2797464b866bd99a49e1b70,
     type: 3}
+  initialDamageSimple: 10
+  initialDamageCone: 10
+  initialDamageLaser: 0.1
+  initialDamageMissile: 10
 --- !u!114 &7941003601213328127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,3 +249,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3489a263cb7cfbc4b90d902828118662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4513143673942821467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606092818743285363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912f8a1e35c10140b9c5c1eae527cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialLife: 1000

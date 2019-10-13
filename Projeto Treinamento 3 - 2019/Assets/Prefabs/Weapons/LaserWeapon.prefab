@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   bulletSpawn: {fileID: 0}
+  initialDamage: 0
 --- !u!114 &5582284474289654512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +79,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7578970991752538539}
   - component: {fileID: 6333056744193749714}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Laser
   m_TagString: Beam
   m_Icon: {fileID: 0}
