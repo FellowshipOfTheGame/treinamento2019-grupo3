@@ -20,6 +20,8 @@ public class LaserShot : MonoBehaviour {
     public float damageIncreasePerFrame = 0.1f;
     private float damage;
 
+    public List<string> colliders_tags;
+
     private RaycastHit2D hitInfo;
 
     // Start is called before the first frame update
@@ -72,7 +74,7 @@ public class LaserShot : MonoBehaviour {
 
         lineRenderer.SetPosition(0, bulletSpawn.transform.position);
 
-        if (hitInfo && hitInfo.collider.tag != "PlayerShip" && hitInfo.collider.tag != "PSLaser") {
+        if (hitInfo && colliders_tags.Contains(hitInfo.collider.tag)) {
 
             //try to find a Life Container component in the collided object        
             LifeContainer lifeContainer = hitInfo.collider.GetComponent<LifeContainer>();

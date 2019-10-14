@@ -727,16 +727,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6296288630603453961, guid: e679989d24fe5db40bd417bf7cbef577,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 853165603407474608, guid: e679989d24fe5db40bd417bf7cbef577,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e679989d24fe5db40bd417bf7cbef577, type: 3}
 --- !u!1001 &1096702371
@@ -809,7 +799,7 @@ PrefabInstance:
     - target: {fileID: 6296288630603453961, guid: a3b46f7fe64029745bad74e12624613b,
         type: 3}
       propertyPath: m_UseFullKinematicContacts
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 853165603407474608, guid: a3b46f7fe64029745bad74e12624613b,
         type: 3}
@@ -888,7 +878,7 @@ PrefabInstance:
     - target: {fileID: 6296288630603453961, guid: 28b01a81d24167d489dc4b52ff9ae048,
         type: 3}
       propertyPath: m_UseFullKinematicContacts
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28b01a81d24167d489dc4b52ff9ae048, type: 3}
@@ -1015,15 +1005,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 806191185791736436, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8606092818743285363, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
         type: 3}
       propertyPath: m_Name
       value: Ship Teclado
+      objectReference: {fileID: 0}
+    - target: {fileID: 8606092818743285363, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7968292864057921856, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
         type: 3}
@@ -1089,6 +1079,21 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnPosition.y
       value: 9.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 806191185791736436, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
+        type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 806191185791736436, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513143673942821467, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
+        type: 3}
+      propertyPath: initialLife
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b, type: 3}
@@ -1437,7 +1442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889466989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.2, y: -5.7, z: 0}
+  m_LocalPosition: {x: 11.5, y: -3.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1799091646}
@@ -1517,7 +1522,7 @@ PrefabInstance:
     - target: {fileID: 6296288630603453961, guid: dc32eaf87e071a64caa97669a3ada6bd,
         type: 3}
       propertyPath: m_UseFullKinematicContacts
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc32eaf87e071a64caa97669a3ada6bd, type: 3}
