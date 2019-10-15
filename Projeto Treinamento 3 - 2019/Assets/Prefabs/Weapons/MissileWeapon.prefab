@@ -63,7 +63,7 @@ MonoBehaviour:
     type: 3}
   direction: {x: 0, y: 0, z: 0}
   shotTimer: 5
-  damageAmount: 50
+  damageAmount: 10
   nMissiles: 5
   timeBetweenMissiles: 0.5
 --- !u!114 &7463449474028028021

@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  colliders_tags:
+  - PlayerShip
 --- !u!114 &3836996388980030193
 MonoBehaviour:
   m_ObjectHideFlags: 0

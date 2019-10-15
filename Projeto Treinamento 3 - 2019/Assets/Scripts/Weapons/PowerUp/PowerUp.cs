@@ -6,32 +6,8 @@ public class PowerUp : MonoBehaviour{
 
     public float damageIncrease;
     public ShotType powerUpType;
-
-    // Start is called before the first frame update
-    void Start(){
-        
-    }
-
-    // Update is called once per frame
-    void Update(){
-        
-    }
-
-    
-    /*private void OnCollisionEnter2D(Collision2D collision){
-        
-        PSWeapons weapons = collision.gameObject.GetComponent<PSWeapons>();
-        if (weapons) {
-            if (weapons.currentShot == powerUpType) {
-                weapons.IncreaseDamage(damageIncrease);
-            } else {
-                weapons.ChangeWeapon(powerUpType);
-            }
-
-            Destroy(gameObject);
-        }
-         
-    }*/
+    public Vector3 direction = new Vector3(-1, 0, 0);
+    public float speed = 5;
 
     private void OnTriggerEnter2D(Collider2D collision){
 
@@ -48,4 +24,27 @@ public class PowerUp : MonoBehaviour{
 
     }
 
+    private void FixedUpdate(){
+        Move();
+    }
+
+    public void Move(){
+        transform.Translate(direction * speed * Time.fixedDeltaTime);
+    }
+
 }
+        
+        /*private void OnCollisionEnter2D(Collision2D collision){
+
+       PSWeapons weapons = collision.gameObject.GetComponent<PSWeapons>();
+       if (weapons) {
+           if (weapons.currentShot == powerUpType) {
+               weapons.IncreaseDamage(damageIncrease);
+           } else {
+               weapons.ChangeWeapon(powerUpType);
+           }
+
+           Destroy(gameObject);
+       }
+
+   }*/

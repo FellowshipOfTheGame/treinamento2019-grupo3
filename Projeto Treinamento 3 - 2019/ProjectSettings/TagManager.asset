@@ -9,7 +9,7 @@ TagManager:
   - PSLaser
   - Enemy
   - EnemyShip
-  - Beam
+  - Laser
   layers:
   - Default
   - TransparentFX
