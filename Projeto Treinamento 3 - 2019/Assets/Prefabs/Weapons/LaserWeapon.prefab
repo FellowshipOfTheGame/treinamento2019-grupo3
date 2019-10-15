@@ -47,7 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   bulletSpawn: {fileID: 0}
-  initialDamage: 0
 --- !u!114 &5582284474289654512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +68,9 @@ MonoBehaviour:
   maxWidth: 2
   initialDamage: 0.1
   damageIncreasePerFrame: 0.1
+  colliders_tags:
+  - Enemy
+  - EnemyShip
 --- !u!1 &8156894009051084518
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +83,7 @@ GameObject:
   - component: {fileID: 6333056744193749714}
   m_Layer: 10
   m_Name: Laser
-  m_TagString: Beam
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

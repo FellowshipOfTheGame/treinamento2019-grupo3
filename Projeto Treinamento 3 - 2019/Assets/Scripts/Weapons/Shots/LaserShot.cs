@@ -27,11 +27,10 @@ public class LaserShot : MonoBehaviour {
     // Start is called before the first frame update
     void Start(){
         lineRenderer = laser.GetComponent<LineRenderer>();
-        laser.layer = gameObject.layer;
-        //Debug.Log(gameObject.layer);
+        /*laser.layer = gameObject.layer;
         if(LayerMask.LayerToName(laser.layer) == "PlayerShip") {
             laser.tag = "PSLaser";
-        }
+        }*/
     }
 
     public void Shoot(){

@@ -211,7 +211,7 @@ MonoBehaviour:
   maxY: 18.7
   minX: -34.7
   maxX: 3.5
-  reducedSpeedPercentage: 0.4
+  reducedSpeedPercentage: 0.5
 --- !u!114 &1762028010633654119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,10 +233,6 @@ MonoBehaviour:
     type: 3}
   missileWeapon: {fileID: 1827987471969117552, guid: 9b96a9aeb2797464b866bd99a49e1b70,
     type: 3}
-  initialDamageSimple: 10
-  initialDamageCone: 10
-  initialDamageLaser: 0.1
-  initialDamageMissile: 10
 --- !u!114 &7941003601213328127
 MonoBehaviour:
   m_ObjectHideFlags: 0

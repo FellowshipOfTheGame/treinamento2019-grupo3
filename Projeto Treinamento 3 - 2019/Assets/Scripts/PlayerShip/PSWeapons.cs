@@ -65,7 +65,7 @@ public class PSWeapons : MonoBehaviour {
     //method to change the type of the shot to cone
     public void ChangeToConeWeapon(){
         currentShot = ShotType.CONE;
-        currentWeapon = Instantiate(laserWeapon, transform.position, Quaternion.identity);
+        currentWeapon = Instantiate(coneWeapon, transform.position, Quaternion.identity);
     }
 
     //method to change the type of the shot to beam
