@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 240824123701299258}
   - component: {fileID: 6773317828864923237}
   - component: {fileID: 3836996388980030193}
+  - component: {fileID: 8290140074146911973}
   m_Layer: 9
   m_Name: EnemyShip0
   m_TagString: EnemyShip
@@ -126,6 +127,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialLife: 100
+--- !u!114 &8290140074146911973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2927363967339240811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a48917c92229949a2ae21a079cba74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleDamagePercentage: 1
+  coneDamagePercentage: 0.5
+  laserDamagePercentage: 0.5
+  missileDamagePercentage: 1
 --- !u!1 &2927363968324737752
 GameObject:
   m_ObjectHideFlags: 0

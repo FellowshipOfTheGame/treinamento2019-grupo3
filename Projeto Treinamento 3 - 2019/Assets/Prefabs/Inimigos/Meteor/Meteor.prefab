@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: -639928119217662673}
   - component: {fileID: 2797977668118568085}
   - component: {fileID: 9163448927698694228}
+  - component: {fileID: 2156718686628627300}
   - component: {fileID: 2554603595280564484}
+  - component: {fileID: 4031976347741236285}
   m_Layer: 9
   m_Name: Meteor
   m_TagString: Enemy
@@ -119,7 +121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122923289526997555}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f68077ec1d1b5294294c626e027e2948, type: 3}
   m_Name: 
@@ -137,6 +139,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialLife: 30
+--- !u!114 &2156718686628627300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122923289526997555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a48917c92229949a2ae21a079cba74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleDamagePercentage: 1
+  coneDamagePercentage: 1
+  laserDamagePercentage: 0.5
+  missileDamagePercentage: 0.5
 --- !u!114 &2554603595280564484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +170,19 @@ MonoBehaviour:
   damage: 100
   colliders_tags:
   - PlayerShip
+--- !u!58 &4031976347741236285
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122923289526997555}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

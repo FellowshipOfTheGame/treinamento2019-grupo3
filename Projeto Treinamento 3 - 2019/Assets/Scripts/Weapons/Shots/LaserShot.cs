@@ -27,10 +27,7 @@ public class LaserShot : MonoBehaviour {
     // Start is called before the first frame update
     void Start(){
         lineRenderer = laser.GetComponent<LineRenderer>();
-        /*laser.layer = gameObject.layer;
-        if(LayerMask.LayerToName(laser.layer) == "PlayerShip") {
-            laser.tag = "PSLaser";
-        }*/
+        
     }
 
     public void Shoot(){
@@ -78,10 +75,13 @@ public class LaserShot : MonoBehaviour {
             //try to find a Life Container component in the collided object        
             LifeContainer lifeContainer = hitInfo.collider.GetComponent<LifeContainer>();
             if (lifeContainer) {
-                lifeContainer.TakeDamage(damage);
+                CustomizedDamage cd = hitInfo.collider.GetComponent<CustomizedDamage>();
+                if (cd) {
+                    cd.TakeDamage(damage, ShotType.LASER);
+                } else {
+                    lifeContainer.TakeDamage(damage);
+                }
             }
-
-            Debug.Log(hitInfo.collider.name);
             
             lineRenderer.SetPosition(1, hitInfo.point);
 

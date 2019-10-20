@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 4488432287158885970}
   - component: {fileID: 6615139421145267345}
   - component: {fileID: 5121188494171248431}
+  - component: {fileID: 1693096386072588276}
   - component: {fileID: 2936162655864468041}
+  - component: {fileID: 5504373052033366866}
   m_Layer: 9
   m_Name: MeteorFragment
   m_TagString: Enemy
@@ -122,6 +124,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialLife: 10
+--- !u!114 &1693096386072588276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186191716325764515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a48917c92229949a2ae21a079cba74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleDamagePercentage: 1
+  coneDamagePercentage: 1
+  laserDamagePercentage: 0.5
+  missileDamagePercentage: 0.5
 --- !u!114 &2936162655864468041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +155,17 @@ MonoBehaviour:
   damage: 10
   colliders_tags:
   - PlayerShip
+--- !u!136 &5504373052033366866
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186191716325764515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.4540174
+  m_Height: 0.966558
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
