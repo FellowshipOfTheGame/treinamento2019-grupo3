@@ -33,9 +33,9 @@ public class LaserShot : MonoBehaviour {
     public void Shoot(){
 
         if (!isShooting) TurnOn();
-        else {
-            if (!reachedMaxWidht) IncreaseWidth();
-            else TurnOff();
+            else {
+                if (!reachedMaxWidht) IncreaseWidth();
+                else UpdateLaserPosition();
         }
     }
     public void TurnOn(){

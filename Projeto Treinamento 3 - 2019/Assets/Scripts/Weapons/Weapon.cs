@@ -20,7 +20,6 @@ public class Weapon : MonoBehaviour{
 
     public void StopShooting(){
         SendMessage("TurnOff");
-        //SendMessageUpwards("SetNormalSpeed");
     }
 
     public void IncreaseDamageAmount(float value){
