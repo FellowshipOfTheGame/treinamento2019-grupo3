@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9cce03ff5eb7e4188044376005be63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nFragments: 30
+  nFragments: 10
   fragment: {fileID: 8186191716325764515, guid: 87f49e73efb55a4459c24c61f549c505,
     type: 3}
 --- !u!114 &-639928119217662673
