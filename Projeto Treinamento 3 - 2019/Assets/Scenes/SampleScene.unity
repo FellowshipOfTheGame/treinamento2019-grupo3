@@ -223,7 +223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &227334402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -607,7 +607,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 78489b363b7b7c04fb875517b5443b79, type: 3}
-  m_Color: {r: 0.4039817, g: 0.78431374, b: 0, a: 1}
+  m_Color: {r: 0.78431374, g: 0.15782805, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 701661043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66a31593eb382dd48b8988770fe8f756, type: 3}
+  m_Script: {fileID: 11500000, guid: cf1d6a7106717eb40a0731a9eb1d120f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: J1
@@ -718,12 +718,6 @@ MonoBehaviour:
   rightKey: 
   grid: {fileID: 701661046}
   waveManager: {fileID: 701661044}
-  up: 0
-  down: 0
-  left: 0
-  right: 0
-  verticalButtonDown: 0
-  horizontalButtonDown: 0
   enemyPool:
   - {fileID: 2927363967339240811, guid: fb09db631389d6644a72343c016c4385, type: 3}
   - {fileID: 2927363967339240811, guid: 01fe6fb9ad529224891fd33c1d8e3cd7, type: 3}
@@ -1553,10 +1547,25 @@ PrefabInstance:
       propertyPath: reducedSpeedPercentage
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1989635623532439558, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
+        type: 3}
+      propertyPath: verticalSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1989635623532439558, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
+        type: 3}
+      propertyPath: horizontalBackSpeed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4513143673942821467, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
         type: 3}
       propertyPath: initialLife
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4513143673942821467, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b,
+        type: 3}
+      propertyPath: maxLife
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 672d1bcdd9e007048ad0e9fb0d9fbc3b, type: 3}
@@ -1884,8 +1893,9 @@ GameObject:
   - component: {fileID: 1702862193}
   - component: {fileID: 1702862192}
   - component: {fileID: 1702862191}
+  - component: {fileID: 1702862195}
   m_Layer: 9
-  m_Name: test look
+  m_Name: test ship look
   m_TagString: EnemyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1904,7 +1914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 985738585}
-  lookSpeed: 200
+  lookSpeed: 10
 --- !u!60 &1702862192
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1970,6 +1980,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1702862195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702862190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fc62d7d9a14c9f479515115d9facefe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
 --- !u!1001 &1719230803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1985,7 +2008,7 @@ PrefabInstance:
     - target: {fileID: 1418202015246636296, guid: 4482c02e9590b7c4483bf2bab4a6c04c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1418202015246636301, guid: 4482c02e9590b7c4483bf2bab4a6c04c,
         type: 3}
@@ -2055,7 +2078,7 @@ PrefabInstance:
     - target: {fileID: 1418202015246636297, guid: 4482c02e9590b7c4483bf2bab4a6c04c,
         type: 3}
       propertyPath: speed
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4482c02e9590b7c4483bf2bab4a6c04c, type: 3}
@@ -2092,7 +2115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1889466990
 Transform:
   m_ObjectHideFlags: 0
@@ -2204,7 +2227,7 @@ GameObject:
   - component: {fileID: 3045146138756884396}
   - component: {fileID: 123015562132894464}
   m_Layer: 9
-  m_Name: test seno
+  m_Name: test ship seno
   m_TagString: EnemyShip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2258,7 +2281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c972133183d64448f816570be77458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sineAxis: {x: 0, y: 5, z: 0}
+  sineAxis: {x: 2, y: 5, z: 0}
   sinePeriod: 1
 --- !u!212 &123015563412256072
 SpriteRenderer:

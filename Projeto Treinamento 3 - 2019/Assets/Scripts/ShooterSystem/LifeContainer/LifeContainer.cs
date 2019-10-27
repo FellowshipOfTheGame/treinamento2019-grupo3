@@ -6,11 +6,11 @@ using UnityEngine;
 public class LifeContainer : MonoBehaviour{
 
     private float life;
-    public float initialLife;
+    public float maxLife;
 
     // Start is called before the first frame update
     void Start(){
-        life = initialLife;
+        life = maxLife;
     }
 
     // Update is called once per frame
@@ -27,8 +27,8 @@ public class LifeContainer : MonoBehaviour{
     }
 
     public void SetInitialLife(float l){
-        initialLife = l;
-        life = initialLife;
+        maxLife = l;
+        life = maxLife;
     }
 
     public void TakeDamage(float damageAmount){
@@ -38,15 +38,15 @@ public class LifeContainer : MonoBehaviour{
 
     public void IncreaseLife(float lifeAmount){
         life += lifeAmount;
-        if (life > initialLife) life = initialLife;
+        if (life > maxLife) life = maxLife;
     }
 
     public void RestoreLife(){
-        life = initialLife;
+        life = maxLife;
     }
 
     public float GetLifePercentage(){
-        return life / initialLife;
+        return life / maxLife;
     }
 
 }
