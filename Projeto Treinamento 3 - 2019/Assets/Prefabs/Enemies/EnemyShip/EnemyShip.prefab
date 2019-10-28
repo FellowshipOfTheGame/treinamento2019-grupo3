@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e912f8a1e35c10140b9c5c1eae527cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialLife: 100
+  maxLife: 20
 --- !u!114 &8290140074146911973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,8 +361,24 @@ PrefabInstance:
         type: 3}
       propertyPath: simpleBullet
       value: 
+      objectReference: {fileID: 5587719970040693649, guid: ecfe48a335ea76946a29ac1e0d0d2467,
+        type: 3}
+    - target: {fileID: 3074558961009092932, guid: 7cc0536b1e1d3314fb95e2547f600844,
+        type: 3}
+      propertyPath: simpleBullet
+      value: 
       objectReference: {fileID: 5587719970040693649, guid: a9d9b1c71ec46a54fb75d0dfa447e0ff,
         type: 3}
+    - target: {fileID: 3074558961009092932, guid: 7cc0536b1e1d3314fb95e2547f600844,
+        type: 3}
+      propertyPath: shotTimer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074558961009092932, guid: 7cc0536b1e1d3314fb95e2547f600844,
+        type: 3}
+      propertyPath: direction.x
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cc0536b1e1d3314fb95e2547f600844, type: 3}
 --- !u!1 &8213550091496904673 stripped

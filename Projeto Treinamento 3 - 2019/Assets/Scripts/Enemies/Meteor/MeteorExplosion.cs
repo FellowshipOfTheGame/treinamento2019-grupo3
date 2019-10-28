@@ -14,24 +14,26 @@ public class MeteorExplosion : MonoBehaviour
         gamb++;
     }
 
-    /*void OnDestroy()
+    void OnDestroy()
     {
         if (gamb > 1)
             Explosion();
         //problem:
         //Some objects were not cleaned up when closing the scene. (Did you spawn new GameObjects from OnDestroy?)
-         
-        Explosion();
-    }*/
+        //Explosion();
+    }
 
     public void Explosion()
     {
-        float angleVariation = 360 / nFragments;
-        for (int i = 0; i < nFragments; i++)
-        {
-            GameObject instance = Instantiate(fragment, transform.position, Quaternion.Euler(0, 0, angleVariation * i));
+        if(nFragments == 1) {
+            Instantiate(fragment, transform.position, Quaternion.Euler(0, 0, 0));
+        } else {
+            float angleVariation = 120 / (nFragments - 1);
+            for (int i = 0; i < nFragments; i++) {
+                Instantiate(fragment, transform.position, Quaternion.Euler(0, 0, (angleVariation * i) - 60));
+            }
         }
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
