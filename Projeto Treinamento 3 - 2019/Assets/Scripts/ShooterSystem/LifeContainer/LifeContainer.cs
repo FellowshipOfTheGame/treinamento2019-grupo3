@@ -21,9 +21,10 @@ public class LifeContainer : MonoBehaviour{
     }
 
     public void Die(){
-        MeteorExplosion me = gameObject.GetComponent<MeteorExplosion>();
+        /*MeteorExplosion me = gameObject.GetComponent<MeteorExplosion>();
         if (me) me.Explosion();
-        else Destroy(gameObject);
+        else Destroy(gameObject);*/
+        Destroy(gameObject);
     }
 
     public void SetInitialLife(float l){

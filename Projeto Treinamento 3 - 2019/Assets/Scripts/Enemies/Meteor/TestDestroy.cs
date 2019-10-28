@@ -6,7 +6,7 @@ public class TestDestroy : MonoBehaviour
 {
     void Start()
     {
-        Invoke("Destruir", 5);
+        //Invoke("Destruir", 0.1f);
     }
 
     void Destruir()
