@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 139630355338839331}
   - component: {fileID: 139630355338839328}
   - component: {fileID: 139630355338839335}
-  - component: {fileID: 4432035570383895128}
+  - component: {fileID: 2956164538634379129}
+  - component: {fileID: 3438195455392628990}
   m_Layer: 0
-  m_Name: Enemy Ship Type 3
+  m_Name: Enemy Ship Type 4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachedWeapon: {fileID: 0}
-  startingWeapon: {fileID: 8691577537537296449, guid: d1661537a71037e4f82f05b1b7ef89de,
+  startingWeapon: {fileID: 8691577537537296449, guid: 9bd50a56015d3c04d94fddb88956025e,
     type: 3}
 --- !u!114 &139630355338839330
 MonoBehaviour:
@@ -117,7 +118,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c9998198d03ef4e9c189c24ab493ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &4432035570383895128
+--- !u!114 &2956164538634379129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139630355338839329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c972133183d64448f816570be77458, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sineAxis: {x: 0, y: 3, z: 0}
+  sinePeriod: 2
+--- !u!50 &3438195455392628990
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -207,7 +222,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 78489b363b7b7c04fb875517b5443b79, type: 3}
-  m_Color: {r: 0.9528302, g: 0.2634338, b: 0.022472408, a: 1}
+  m_Color: {r: 0.9056604, g: 0.2264151, b: 0.49132618, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

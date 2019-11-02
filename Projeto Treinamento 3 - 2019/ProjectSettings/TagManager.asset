@@ -11,6 +11,7 @@ TagManager:
   - EnemyShip
   - Laser
   - EnemyBullet
+  - PowerUp
   layers:
   - Default
   - TransparentFX

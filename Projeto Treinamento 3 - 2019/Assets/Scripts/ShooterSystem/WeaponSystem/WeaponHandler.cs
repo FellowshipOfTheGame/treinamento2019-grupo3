@@ -34,7 +34,7 @@ public class WeaponHandler : MonoBehaviour
         attachedWeapon = instantiateWeapon(newWeapon);
     }
 
-    void Shoot(){
+    public void Shoot(){
         if (attachedWeapon != null){
             attachedWeapon.SendMessage("Shoot");
         }        
