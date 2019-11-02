@@ -5,13 +5,13 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     //music
-    [SerializeField] private AudioClip[] ClipsMusic;
-    [SerializeField] private AudioSource backGroundMusic;
+    [SerializeField] private AudioClip[] ClipsMusic = null;
+    [SerializeField] private AudioSource backGroundMusic = null;
     //sounds
-    [SerializeField] private AudioClip[] ClipsSounds;
-    [SerializeField] private AudioSource soundEffect;
+    [SerializeField] private AudioClip[] ClipsSounds = null;
+    [SerializeField] private AudioSource soundEffect = null;
 
-    public static SoundManager instance;
+    public static SoundManager instance = null;
 
     void Awake () {
         if (instance == null) {

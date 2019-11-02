@@ -9,7 +9,7 @@ public class TranslateAtWaveSpeed : MonoBehaviour
     void Start()
     {
         // TODO: get translationVector from the wave
-        translationVector = new Vector3(-5,0,0);
+        translationVector = new Vector3(5,0,0);
     }
 
     void FixedUpdate()

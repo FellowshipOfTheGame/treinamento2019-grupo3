@@ -21,9 +21,6 @@ public class LifeContainer : MonoBehaviour{
     }
 
     public void Die(){
-        /*MeteorExplosion me = gameObject.GetComponent<MeteorExplosion>();
-        if (me) me.Explosion();
-        else Destroy(gameObject);*/
         Destroy(gameObject);
     }
 

@@ -8,7 +8,7 @@ public class Background : MonoBehaviour
 	[SerializeField] private float speed = 3;
 
     /// <summary>renderer obj 3D</summary>
-    [SerializeField] private Renderer Img;
+    [SerializeField] private Renderer Img = null;
 
     void Update()
     {
