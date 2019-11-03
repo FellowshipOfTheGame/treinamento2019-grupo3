@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4276320833639394536}
   - component: {fileID: 4276320833639394537}
   - component: {fileID: 4276320833639394539}
+  - component: {fileID: 5755801457502281093}
   - component: {fileID: 4276320833639394538}
   - component: {fileID: 4276320833639394533}
   - component: {fileID: 4276320833639394532}
@@ -64,6 +65,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLife: 10
+--- !u!114 &5755801457502281093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4276320833639394542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598c6d83f637fd4478a46fcfe7297f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &4276320833639394538
 PolygonCollider2D:
   m_ObjectHideFlags: 0
