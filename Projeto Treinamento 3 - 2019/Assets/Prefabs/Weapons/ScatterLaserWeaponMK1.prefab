@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62885de81ef24a840ad3934414915f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 5476510074365043315, guid: d41c5f6fd6cbf30459b60f560f14dd94, type: 3}
+  shot: {fileID: 5476510074365043315, guid: c204a967b42129646b374157bca9df74, type: 3}
   openingAngle: 20
   numberOfShots: 5
   randomScatter: 0
