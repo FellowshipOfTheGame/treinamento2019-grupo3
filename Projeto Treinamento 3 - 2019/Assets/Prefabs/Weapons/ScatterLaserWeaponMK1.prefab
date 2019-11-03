@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 5476510074365043315, guid: d41c5f6fd6cbf30459b60f560f14dd94, type: 3}
-  openingAngle: 20
-  numberOfShots: 5
+  openingAngle: 15
+  numberOfShots: 3
   randomScatter: 0
-  timeBetweenShots: 0.3
+  timeBetweenShots: 1.2
   offset: {x: 0, y: 0, z: 0}
