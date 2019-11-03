@@ -47,5 +47,5 @@ MonoBehaviour:
   openingAngle: 20
   numberOfShots: 5
   randomScatter: 0
-  timeBetweenShots: 0.3
+  timeBetweenShots: 1.2
   offset: {x: 0, y: 0, z: 0}
