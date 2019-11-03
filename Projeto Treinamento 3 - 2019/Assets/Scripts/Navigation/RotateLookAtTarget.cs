@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateLookAtTarget : MonoBehaviour
 {
-    public Transform target;
+    public GameObject target;
     [SerializeField]
     private float lookSpeed = 1;
     private float angleDiference;
@@ -17,5 +17,8 @@ public class RotateLookAtTarget : MonoBehaviour
             angleDiference = Vector3.SignedAngle(transform.right, targetDirection, Vector3.forward);
             transform.Rotate(0, 0, angleDiference * lookSpeed * Time.fixedDeltaTime, Space.Self);
         }
+    }
+    void SetTarget(GameObject g){
+        target = g;
     }
 }

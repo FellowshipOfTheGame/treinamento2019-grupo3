@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa2b58bf4b7c004e9f505a4e26d3145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 5
+  timer: 1
 --- !u!114 &5476510074365043314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  damage: 1
+  damage: 3
 --- !u!50 &6867457608347335436
 Rigidbody2D:
   serializedVersion: 4

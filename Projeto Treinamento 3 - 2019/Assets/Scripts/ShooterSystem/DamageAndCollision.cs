@@ -11,7 +11,6 @@ public class DamageAndCollision : MonoBehaviour
         owner =  _owner;
     }
     private void OnTriggerEnter2D(Collider2D collider){
-        
         if (collider.isTrigger == false){
             if (owner.tag != collider.tag){
                 Debug.Log(transform.name + " collided with " + collider.name);

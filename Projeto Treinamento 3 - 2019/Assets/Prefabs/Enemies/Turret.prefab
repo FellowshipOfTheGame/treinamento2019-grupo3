@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4276320833639394533}
   - component: {fileID: 4799614708035158973}
   - component: {fileID: 6529586596949671935}
+  - component: {fileID: 3886180245964859567}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Enemy
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  lookSpeed: 5
+  lookSpeed: 20
 --- !u!114 &2852086107155930614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b42240c9c68a641a174b2bb3c5d487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLife: 100
+  maxLife: 5
 --- !u!114 &5755801457502281093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +165,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3886180245964859567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4276320833639394542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16fc4f3d6c9893c4a92ea8f28a115d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4276320835063024541
 GameObject:
   m_ObjectHideFlags: 0
