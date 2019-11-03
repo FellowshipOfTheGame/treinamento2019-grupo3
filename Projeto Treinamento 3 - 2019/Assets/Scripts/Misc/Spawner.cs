@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject[] spawnList = null;
+    public GameObject[] spawnList = null;    
+    public GameObject[] spawnOnceList = null;
     public float timeBetweenSpawns = 1f;    
     private float spawnTimer = 0f;
     public float minY, maxY = 0f;
 
+    void Start() {
+        foreach (GameObject g in spawnOnceList){
+            Instantiate(g , Vector3.zero , Quaternion.identity);
+        }
+    }
     // Update is called once per frame
     void Update()
     {

@@ -9,16 +9,14 @@ public class WeaponHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (startingWeapon != null){
+        if (startingWeapon != null && attachedWeapon == null){
             attachedWeapon = instantiateWeapon(startingWeapon);
         }
     }
 
     // input de teste, não deve ficar aqui
     void Update() {
-        if (Input.GetKey(KeyCode.Space)){
-            Shoot();
-        }
+        
     }
 
     // method to instantiate a weapon prefab
