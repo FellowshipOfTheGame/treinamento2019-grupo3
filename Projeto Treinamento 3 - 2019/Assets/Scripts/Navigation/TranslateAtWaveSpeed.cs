@@ -9,11 +9,12 @@ public class TranslateAtWaveSpeed : MonoBehaviour
     void Start()
     {
         // TODO: get translationVector from the wave
-        translationVector = new Vector3(5,0,0);
+        translationVector = new Vector3(-5,0,0);
     }
 
     void FixedUpdate()
     {
-        transform.Translate(translationVector * Time.fixedDeltaTime);
+        //translate based on World Space to avoid problems with rotating
+        transform.Translate(translationVector * Time.fixedDeltaTime, Space.World);
     }
 }

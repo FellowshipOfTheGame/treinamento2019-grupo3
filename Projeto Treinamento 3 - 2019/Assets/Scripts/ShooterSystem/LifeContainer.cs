@@ -21,7 +21,7 @@ public class LifeContainer : MonoBehaviour{
     }
 
     public void Die(){
-        Destroy(gameObject);
+        SendMessage("OnDeath");
     }
 
     public void SetInitialLife(float l){
