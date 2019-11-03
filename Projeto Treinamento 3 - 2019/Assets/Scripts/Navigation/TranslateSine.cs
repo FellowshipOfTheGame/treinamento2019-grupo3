@@ -8,6 +8,7 @@ public class TranslateSine : MonoBehaviour
     private Vector3 sineAxis = new Vector3(2,3,0); // eixo (direção e amplitude) do movimento senoidal
     [SerializeField]
     private float sinePeriod = 1; // tempo em segundos de cada revolução
+    public float phaseDegree = 0f;
     private float startTime = 0f;
     private float B;
     void Start() {
@@ -17,6 +18,6 @@ public class TranslateSine : MonoBehaviour
     void FixedUpdate()
     {
         B = Mathf.PI / sinePeriod;
-        transform.Translate(Time.fixedDeltaTime * B * sineAxis * Mathf.Sin(Mathf.PI/2 + B * (Time.time - startTime)));
+        transform.Translate(Time.fixedDeltaTime * B * sineAxis * Mathf.Sin(Mathf.PI/2 + B * (Time.time - startTime) + Mathf.PI*phaseDegree/180));
     }
 }
