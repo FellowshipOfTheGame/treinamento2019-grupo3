@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 903711975068925318}
   - component: {fileID: 903711975068925319}
   m_Layer: 0
-  m_Name: Power-up
+  m_Name: Power-up Scatter MK1
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

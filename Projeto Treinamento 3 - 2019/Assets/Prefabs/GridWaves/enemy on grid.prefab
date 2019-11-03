@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8169801274528504626}
   - component: {fileID: 6585515178316338527}
   m_Layer: 0
-  m_Name: unknown enemy on grid
+  m_Name: enemy on grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

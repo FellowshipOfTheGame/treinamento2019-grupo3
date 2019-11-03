@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour
 
     void Start() {
         foreach (GameObject g in spawnOnceList){
-            Instantiate(g , Vector3.zero , Quaternion.identity);
+            Instantiate(g , new Vector3(-25,0,0) , Quaternion.identity);
         }
     }
     // Update is called once per frame
