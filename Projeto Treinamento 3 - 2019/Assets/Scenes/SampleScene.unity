@@ -601,6 +601,7 @@ MonoBehaviour:
   - {fileID: 5222761914450168788, guid: 73aeced9d8f2e3046bc4cab3ee600166, type: 3}
   spawnOnceList:
   - {fileID: 4756154042496209796, guid: d0aefc7ede0a34e4bb5f50be0b0b678f, type: 3}
+  - {fileID: 4756154042496209796, guid: 7f1bf6bb36417214a806078fafdbe88d, type: 3}
   timeBetweenSpawns: 1.5
   minY: -18
   maxY: 18
