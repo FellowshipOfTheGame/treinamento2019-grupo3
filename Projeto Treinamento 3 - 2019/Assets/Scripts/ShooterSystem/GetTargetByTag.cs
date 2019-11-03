@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetRandomPlayerAsTarget : MonoBehaviour
+public class GetTargetByTag : MonoBehaviour
 {
+    public string targetTag = "PlayerShip";
     // Start is called before the first frame update
     void Start()
     {
@@ -11,7 +12,7 @@ public class GetRandomPlayerAsTarget : MonoBehaviour
     }
 
     void LockAim(){
-        PlayerShipInput[] players = Object.FindObjectsOfType<PlayerShipInput>();
+        GameObject[] players = GameObject.FindGameObjectsWithTag(targetTag);
         if (players != null){
             int numberOfPlayers = players.Length;
             int r = Random.Range(0,numberOfPlayers);
