@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5222761914450168750}
   - component: {fileID: 1050820062021247142}
   m_Layer: 0
-  m_Name: Enemy Ship Type 2
+  m_Name: Enemy Ship Laser mk1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

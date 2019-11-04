@@ -226,85 +226,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &365549143
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2543145411102708457, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: sinePeriod
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839329, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy Ship Type mk1 Circle
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 139630355338839332, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2956164538634379129, guid: 55ccd0bd11389f64db672fc56de075fb,
-        type: 3}
-      propertyPath: sinePeriod
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 55ccd0bd11389f64db672fc56de075fb, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,10 +411,10 @@ MonoBehaviour:
   grid: {fileID: 701661046}
   waveManager: {fileID: 701661044}
   enemyPool:
-  - {fileID: 2927363967339240811, guid: fb09db631389d6644a72343c016c4385, type: 3}
-  - {fileID: 2927363967339240811, guid: 01fe6fb9ad529224891fd33c1d8e3cd7, type: 3}
-  - {fileID: 2927363967339240811, guid: 8f620aba4482a1241a90121f8a6ecf8d, type: 3}
-  - {fileID: 2927363967339240811, guid: 6fef482ed1b9c234b953894cd85b2913, type: 3}
+  - {fileID: 139630355338839329, guid: ed562b15eefce424ea09cc887d8174bb, type: 3}
+  - {fileID: 139630355338839329, guid: 55ccd0bd11389f64db672fc56de075fb, type: 3}
+  - {fileID: 4276320833639394542, guid: a074de9980f37244680134cce39003ad, type: 3}
+  - {fileID: 4276320833639394542, guid: cdaa999fd22702d49b0f88a2a2c8c591, type: 3}
 --- !u!1 &809245989
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +600,7 @@ PrefabInstance:
     - target: {fileID: 1418202015246636296, guid: 4482c02e9590b7c4483bf2bab4a6c04c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1418202015246636301, guid: 4482c02e9590b7c4483bf2bab4a6c04c,
         type: 3}

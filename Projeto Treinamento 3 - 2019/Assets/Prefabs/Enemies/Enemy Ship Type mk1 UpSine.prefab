@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2956164538634379129}
   - component: {fileID: 3438195455392628990}
   m_Layer: 0
-  m_Name: Enemy Ship Type 4
+  m_Name: Enemy Ship Type mk1 UpSine
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sineAxis: {x: 0, y: 3, z: 0}
   sinePeriod: 2
+  phaseDegree: 0
 --- !u!50 &3438195455392628990
 Rigidbody2D:
   serializedVersion: 4

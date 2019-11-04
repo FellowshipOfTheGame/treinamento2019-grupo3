@@ -38,7 +38,6 @@ public class ScatterShooter : MonoBehaviour
             }
         }
         foreach (float a in angles){
-            Debug.Log(a);
             Vector3 pos = transform.position + offset;
             Quaternion dir = transform.rotation * Quaternion.Euler(0, 0, a);
             GameObject s = Instantiate(shot, pos, dir);
