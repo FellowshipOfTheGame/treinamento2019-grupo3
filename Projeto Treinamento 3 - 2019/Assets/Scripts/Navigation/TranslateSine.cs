@@ -11,6 +11,7 @@ public class TranslateSine : MonoBehaviour
     public float phaseDegree = 0f;
     private float startTime = 0f;
     private float B;
+
     void Start() {
         startTime = Time.time;
     }
@@ -18,6 +19,11 @@ public class TranslateSine : MonoBehaviour
     void FixedUpdate()
     {
         B = Mathf.PI / sinePeriod;
-        transform.Translate(Time.fixedDeltaTime * B * sineAxis * Mathf.Sin(Mathf.PI/2 + B * (Time.time - startTime) + Mathf.PI*phaseDegree/180));
+        Vector3 translation = Time.fixedDeltaTime * B * sineAxis * Mathf.Sin(Mathf.PI / 2 + B * (Time.time - startTime) + Mathf.PI * phaseDegree / 180);
+        transform.Translate(translation);
+        EnemyShipAnimator anim = GetComponent<EnemyShipAnimator>();
+        if (anim) {
+            anim.UpdateVelocityY(translation.y);
+        }
     }
 }
