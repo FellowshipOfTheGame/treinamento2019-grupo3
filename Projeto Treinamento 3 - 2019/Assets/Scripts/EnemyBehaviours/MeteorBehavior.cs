@@ -5,13 +5,15 @@ using UnityEngine;
 public class MeteorBehavior : MonoBehaviour
 {
     public GameObject meteorPrefab = null;
+    public float maxMeteorAmount = 10f;
     public float meteorAmount = 10f;
     public float minMeteorAmount = 2f;
+    public float maxScale = 1f;
 
     void Start() {
         // resize meteor
         // float scale = Mathf.Log(meteorAmount, 10);
-        float scale = Mathf.Sqrt(meteorAmount);
+        float scale = (meteorAmount/maxMeteorAmount) * maxScale;
         transform.localScale = new Vector3(scale,scale,1);
     }
 
@@ -19,8 +21,16 @@ public class MeteorBehavior : MonoBehaviour
         meteorAmount = amount;
     }
 
+    void SetMaxMeteorAmount(float amount){
+        maxMeteorAmount = amount;
+    }
+
+    void SetMaxScale(float amount){
+        maxScale = amount;
+    }
+
     void OnDeath(){
-        if (meteorAmount > 2*minMeteorAmount){
+        if (meteorAmount > minMeteorAmount){
             Shatter();
         }else{
             DestroyThis();
@@ -33,8 +43,12 @@ public class MeteorBehavior : MonoBehaviour
         GameObject m = null;
         m = Instantiate(meteorPrefab, transform.position, transform.rotation);
         m.SendMessage("SetMeteorAmount", splittedAmount);
+        m.SendMessage("SetMaxMeteorAmount", maxMeteorAmount);
+        m.SendMessage("SetMaxScale", maxScale);
         m = Instantiate(meteorPrefab, transform.position, transform.rotation);        
         m.SendMessage("SetMeteorAmount", meteorAmount - splittedAmount);
+        m.SendMessage("SetMaxMeteorAmount", maxMeteorAmount);
+        m.SendMessage("SetMaxScale", maxScale);
         DestroyThis();
     }
 
