@@ -35,6 +35,7 @@ public class MeteorBehavior : MonoBehaviour
         }else{
             DestroyThis();
         }
+        SoundManager.PlaySound("meteorExplosion");
     }
 
     void Shatter(){

@@ -79,6 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598c6d83f637fd4478a46fcfe7297f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playSound: 1
+  audioClipName: enemyShipDeath
 --- !u!114 &5222761914450168750
 MonoBehaviour:
   m_ObjectHideFlags: 0
