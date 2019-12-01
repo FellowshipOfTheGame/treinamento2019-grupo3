@@ -21,6 +21,7 @@ public class BasicLaserShooter : MonoBehaviour
         if (shootingTimer <= 0){
             shootingTimer = timeBetweenShots;
             InstantiateShot();
+            SoundManager.PlaySound("simpleShot");
         }
     }
 

@@ -16,6 +16,7 @@ public class PowerUpBehavior : MonoBehaviour
             // collided with a object with a weaponHandler
             weaponHandler.ChangeWeapon(weapon);
             Destroy(gameObject);
+            SoundManager.PlaySound("powerUp");
         }
     }
 }

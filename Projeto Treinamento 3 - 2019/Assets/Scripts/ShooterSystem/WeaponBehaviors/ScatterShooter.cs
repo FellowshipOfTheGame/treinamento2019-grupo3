@@ -23,6 +23,7 @@ public class ScatterShooter : MonoBehaviour
         if (shootingTimer <= 0){
             shootingTimer = timeBetweenShots;
             InstantiateShot();
+            SoundManager.PlaySound("scatterShot");
         }
     }
 
