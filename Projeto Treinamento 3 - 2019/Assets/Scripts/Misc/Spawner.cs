@@ -14,6 +14,7 @@ public class Spawner : MonoBehaviour
         foreach (GameObject g in spawnOnceList){
             Instantiate(g , new Vector3(-25,0,0) , Quaternion.identity);
         }
+        SoundManager.PlayMusic("gameplayMusic");
     }
     // Update is called once per frame
     void Update()
